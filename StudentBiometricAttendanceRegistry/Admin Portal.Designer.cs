@@ -37,6 +37,8 @@
             this.regStudent_btn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,18 +57,18 @@
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(12, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 441);
+            this.panel1.Size = new System.Drawing.Size(261, 492);
             this.panel1.TabIndex = 10;
             // 
             // department_btn
             // 
             this.department_btn.BackColor = System.Drawing.Color.Teal;
             this.department_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.department_btn.Location = new System.Drawing.Point(9, 332);
+            this.department_btn.Location = new System.Drawing.Point(3, 126);
             this.department_btn.Name = "department_btn";
-            this.department_btn.Size = new System.Drawing.Size(236, 42);
+            this.department_btn.Size = new System.Drawing.Size(242, 45);
             this.department_btn.TabIndex = 10;
-            this.department_btn.Text = "DEPARTMENT";
+            this.department_btn.Text = "HOME";
             this.department_btn.UseVisualStyleBackColor = false;
             this.department_btn.Click += new System.EventHandler(this.department_btn_Click);
             // 
@@ -74,12 +76,13 @@
             // 
             this.addCourse_btn.BackColor = System.Drawing.Color.Teal;
             this.addCourse_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addCourse_btn.Location = new System.Drawing.Point(3, 281);
+            this.addCourse_btn.Location = new System.Drawing.Point(3, 332);
             this.addCourse_btn.Name = "addCourse_btn";
             this.addCourse_btn.Size = new System.Drawing.Size(242, 45);
             this.addCourse_btn.TabIndex = 9;
             this.addCourse_btn.Text = "ADD COURSE";
             this.addCourse_btn.UseVisualStyleBackColor = false;
+            this.addCourse_btn.Click += new System.EventHandler(this.addCourse_btn_Click);
             // 
             // adminLogout_btn
             // 
@@ -91,23 +94,25 @@
             this.adminLogout_btn.TabIndex = 8;
             this.adminLogout_btn.Text = "LOG OUT";
             this.adminLogout_btn.UseVisualStyleBackColor = false;
+            this.adminLogout_btn.Click += new System.EventHandler(this.adminLogout_btn_Click);
             // 
             // addUnit_btn
             // 
             this.addUnit_btn.BackColor = System.Drawing.Color.Teal;
             this.addUnit_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addUnit_btn.Location = new System.Drawing.Point(3, 229);
+            this.addUnit_btn.Location = new System.Drawing.Point(3, 280);
             this.addUnit_btn.Name = "addUnit_btn";
             this.addUnit_btn.Size = new System.Drawing.Size(242, 46);
             this.addUnit_btn.TabIndex = 6;
             this.addUnit_btn.Text = "ADD UNIT";
             this.addUnit_btn.UseVisualStyleBackColor = false;
+            this.addUnit_btn.Click += new System.EventHandler(this.addUnit_btn_Click);
             // 
             // addLec_btn
             // 
             this.addLec_btn.BackColor = System.Drawing.Color.Teal;
             this.addLec_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addLec_btn.Location = new System.Drawing.Point(3, 177);
+            this.addLec_btn.Location = new System.Drawing.Point(3, 228);
             this.addLec_btn.Name = "addLec_btn";
             this.addLec_btn.Size = new System.Drawing.Size(242, 46);
             this.addLec_btn.TabIndex = 4;
@@ -119,7 +124,7 @@
             // 
             this.regStudent_btn.BackColor = System.Drawing.Color.Teal;
             this.regStudent_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.regStudent_btn.Location = new System.Drawing.Point(3, 126);
+            this.regStudent_btn.Location = new System.Drawing.Point(3, 177);
             this.regStudent_btn.Name = "regStudent_btn";
             this.regStudent_btn.Size = new System.Drawing.Size(242, 45);
             this.regStudent_btn.TabIndex = 2;
@@ -147,12 +152,38 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.label1.Location = new System.Drawing.Point(424, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(440, 24);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "DEDAN KIMATHI UNIVERSITY OF TECHNOLOGY";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(524, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(254, 23);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Better life Through Technology";
+            // 
             // Admin_Portal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(1092, 456);
+            this.BackgroundImage = global::StudentBiometricAttendanceRegistry.Properties.Resources.home;
+            this.ClientSize = new System.Drawing.Size(984, 488);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Admin_Portal";
@@ -161,6 +192,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,5 +207,7 @@
         private System.Windows.Forms.Button regStudent_btn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

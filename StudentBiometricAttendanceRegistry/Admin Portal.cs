@@ -17,12 +17,12 @@ namespace StudentBiometricAttendanceRegistry
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void addLec_btn_Click(object sender, EventArgs e)
+        private void AddLec_btn_Click(object sender, EventArgs e)
         {
             Add_Lecturer addlec = new Add_Lecturer();
             addlec.Show();
@@ -45,6 +45,25 @@ namespace StudentBiometricAttendanceRegistry
             Register_Student reg = new Register_Student();
             reg.Show();
             this.Hide();
+        }
+
+        private void addUnit_btn_Click(object sender, EventArgs e)
+        {
+            unitName_cb addUnit = new unitName_cb();
+            addUnit.Show();
+            this.Hide();
+        }
+
+        private void adminLogout_btn_Click(object sender, EventArgs e)
+        {
+            Home_frm log = new Home_frm();
+            log.Show();
+            this.Hide();
+        }
+
+        private void addCourse_btn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

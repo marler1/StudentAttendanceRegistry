@@ -164,16 +164,36 @@ namespace StudentBiometricAttendanceRegistry
                             com.Parameters.AddWithValue("@LastName", lname_txt.Text);
                             com.Parameters.AddWithValue("@StudentFingerprint", labelFingerprint.Text);
                             com.Parameters.AddWithValue("@StudentPassport", imageData); // in place of image
-
                             com.Parameters.AddWithValue("@PhoneNumber", phoneNo_txt.Text);
                             com.Parameters.AddWithValue("@Email", email_txt.Text);
                             com.Parameters.AddWithValue("@Course", selectCourse_cmx.Text);
                             com.Parameters.AddWithValue("@Year", year_cbx.Text);
 
-                            com.ExecuteNonQuery();
+                            MySqlConnection sqlcon2 = new MySqlConnection(con);
+                            sqlcon2.Open();
+                            string Select;
+                            Select = "SELECT * FROM student_details WHERE RegistrationNumber='" + regNo_txt.Text + "'";
+                            using (MySqlCommand cm = new MySqlCommand(Select, sqlcon2))
+                            {
+                                using (MySqlDataReader auth = cm.ExecuteReader())
+                                {
+                                    if (auth.HasRows)
+                                    {
+                                        MessageBox.Show("Your details already exists in our database,Thank you");
+                                        sqlcon.Close();
+                                    }
+                                    else
+                                    {
+                                      
+                                        
+                                            com.ExecuteNonQuery();
+                                        sqlcon2.Close();
+                                    }
+                                }
 
-                            //if successful
-                            MessageBox.Show("Processing Complete.....");
+                            }
+                                //if successful
+                                MessageBox.Show("Processing Complete.....");
 
                         }
                         else
@@ -182,6 +202,7 @@ namespace StudentBiometricAttendanceRegistry
                         }
                     }
                 }
+                //clear text boxes
                 regNo_txt.Text = " ";
                 fname_txt.Text = " ";
                 lname_txt.Text = " ";
@@ -246,6 +267,23 @@ private void captureFingerprint_btn_Click(object sender, EventArgs e)
         private void selectCourse_cmx_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void DeviceIDCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StatusBar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Home_frm log = new Home_frm();
+            log.Show();
+            this.Hide();
         }
     }
 

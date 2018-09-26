@@ -233,6 +233,7 @@
             this.adminLogout_btn.TabIndex = 8;
             this.adminLogout_btn.Text = "LOG OUT";
             this.adminLogout_btn.UseVisualStyleBackColor = false;
+            this.adminLogout_btn.Click += new System.EventHandler(this.adminLogout_btn_Click);
             // 
             // addUnit_btn
             // 
