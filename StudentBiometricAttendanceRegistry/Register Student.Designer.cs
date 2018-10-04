@@ -34,6 +34,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.addUnit_btn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.department_btn = new System.Windows.Forms.Button();
             this.addCourse_btn = new System.Windows.Forms.Button();
             this.adminLogout_btn = new System.Windows.Forms.Button();
-            this.addUnit_btn = new System.Windows.Forms.Button();
             this.addLec_btn = new System.Windows.Forms.Button();
             this.regStudent_btn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -160,12 +160,24 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Teal;
             this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(3, 280);
+            this.button4.Location = new System.Drawing.Point(-5, 294);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(242, 46);
             this.button4.TabIndex = 6;
             this.button4.Text = "ADD UNIT";
             this.button4.UseVisualStyleBackColor = false;
+            // 
+            // addUnit_btn
+            // 
+            this.addUnit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addUnit_btn.ForeColor = System.Drawing.Color.Transparent;
+            this.addUnit_btn.Location = new System.Drawing.Point(0, 221);
+            this.addUnit_btn.Name = "addUnit_btn";
+            this.addUnit_btn.Size = new System.Drawing.Size(242, 46);
+            this.addUnit_btn.TabIndex = 6;
+            this.addUnit_btn.Text = "ADD UNIT";
+            this.addUnit_btn.UseVisualStyleBackColor = false;
+            this.addUnit_btn.Click += new System.EventHandler(this.addUnit_btn_Click);
             // 
             // button5
             // 
@@ -243,17 +255,6 @@
             this.adminLogout_btn.TabIndex = 8;
             this.adminLogout_btn.Text = "LOG OUT";
             this.adminLogout_btn.UseVisualStyleBackColor = false;
-            // 
-            // addUnit_btn
-            // 
-            this.addUnit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addUnit_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addUnit_btn.Location = new System.Drawing.Point(0, 221);
-            this.addUnit_btn.Name = "addUnit_btn";
-            this.addUnit_btn.Size = new System.Drawing.Size(242, 46);
-            this.addUnit_btn.TabIndex = 6;
-            this.addUnit_btn.Text = "ADD UNIT";
-            this.addUnit_btn.UseVisualStyleBackColor = false;
             // 
             // addLec_btn
             // 
@@ -416,6 +417,7 @@
             this.email_txt.Name = "email_txt";
             this.email_txt.Size = new System.Drawing.Size(290, 22);
             this.email_txt.TabIndex = 16;
+            this.email_txt.TextChanged += new System.EventHandler(this.email_txt_TextChanged);
             // 
             // course_label
             // 
@@ -428,7 +430,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(3, 51);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 59);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(150, 122);
             this.pictureBox2.TabIndex = 0;

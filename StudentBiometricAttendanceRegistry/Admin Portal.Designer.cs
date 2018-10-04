@@ -39,6 +39,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSMS = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.btnSMS);
             this.panel1.Controls.Add(this.department_btn);
             this.panel1.Controls.Add(this.addCourse_btn);
             this.panel1.Controls.Add(this.adminLogout_btn);
@@ -88,7 +90,7 @@
             // 
             this.adminLogout_btn.BackColor = System.Drawing.Color.Teal;
             this.adminLogout_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.adminLogout_btn.Location = new System.Drawing.Point(3, 383);
+            this.adminLogout_btn.Location = new System.Drawing.Point(3, 428);
             this.adminLogout_btn.Name = "adminLogout_btn";
             this.adminLogout_btn.Size = new System.Drawing.Size(242, 45);
             this.adminLogout_btn.TabIndex = 8;
@@ -175,6 +177,18 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Better life Through Technology";
             // 
+            // btnSMS
+            // 
+            this.btnSMS.BackColor = System.Drawing.Color.Teal;
+            this.btnSMS.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSMS.Location = new System.Drawing.Point(3, 383);
+            this.btnSMS.Name = "btnSMS";
+            this.btnSMS.Size = new System.Drawing.Size(242, 45);
+            this.btnSMS.TabIndex = 11;
+            this.btnSMS.Text = "SEND SMS";
+            this.btnSMS.UseVisualStyleBackColor = false;
+            this.btnSMS.Click += new System.EventHandler(this.btnSMS_Click);
+            // 
             // Admin_Portal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,5 +223,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSMS;
     }
 }

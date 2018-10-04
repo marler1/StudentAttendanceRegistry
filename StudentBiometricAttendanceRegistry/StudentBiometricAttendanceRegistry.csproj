@@ -85,6 +85,12 @@
     <Compile Include="Register Student.Designer.cs">
       <DependentUpon>Register Student.cs</DependentUpon>
     </Compile>
+    <Compile Include="sendSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sendSMS.Designer.cs">
+      <DependentUpon>sendSMS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Units.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </Compile>
     <EmbeddedResource Include="Register Student.resx">
       <DependentUpon>Register Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sendSMS.resx">
+      <DependentUpon>sendSMS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Units.resx">
       <DependentUpon>Units.cs</DependentUpon>

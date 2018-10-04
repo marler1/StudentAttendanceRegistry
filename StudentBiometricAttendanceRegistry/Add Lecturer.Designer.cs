@@ -122,7 +122,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(269, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(695, 409);
+            this.groupBox1.Size = new System.Drawing.Size(587, 426);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "key in lecturer\'s details";
@@ -131,14 +131,14 @@
             // 
             this.lecPassword_txt.Location = new System.Drawing.Point(38, 315);
             this.lecPassword_txt.Name = "lecPassword_txt";
-            this.lecPassword_txt.Size = new System.Drawing.Size(441, 20);
+            this.lecPassword_txt.Size = new System.Drawing.Size(523, 20);
             this.lecPassword_txt.TabIndex = 17;
             // 
             // lecUsername_txt
             // 
             this.lecUsername_txt.Location = new System.Drawing.Point(38, 254);
             this.lecUsername_txt.Name = "lecUsername_txt";
-            this.lecUsername_txt.Size = new System.Drawing.Size(441, 20);
+            this.lecUsername_txt.Size = new System.Drawing.Size(523, 20);
             this.lecUsername_txt.TabIndex = 16;
             // 
             // lecPassword
@@ -163,28 +163,28 @@
             // 
             this.lecEmail_txt.Location = new System.Drawing.Point(38, 201);
             this.lecEmail_txt.Name = "lecEmail_txt";
-            this.lecEmail_txt.Size = new System.Drawing.Size(441, 20);
+            this.lecEmail_txt.Size = new System.Drawing.Size(523, 20);
             this.lecEmail_txt.TabIndex = 13;
             // 
             // lecTel_txt
             // 
             this.lecTel_txt.Location = new System.Drawing.Point(36, 147);
             this.lecTel_txt.Name = "lecTel_txt";
-            this.lecTel_txt.Size = new System.Drawing.Size(441, 20);
+            this.lecTel_txt.Size = new System.Drawing.Size(523, 20);
             this.lecTel_txt.TabIndex = 11;
             // 
             // lecLname_txt
             // 
             this.lecLname_txt.Location = new System.Drawing.Point(38, 94);
             this.lecLname_txt.Name = "lecLname_txt";
-            this.lecLname_txt.Size = new System.Drawing.Size(441, 20);
+            this.lecLname_txt.Size = new System.Drawing.Size(523, 20);
             this.lecLname_txt.TabIndex = 9;
             // 
             // lecFname_txt
             // 
             this.lecFname_txt.Location = new System.Drawing.Point(37, 41);
             this.lecFname_txt.Name = "lecFname_txt";
-            this.lecFname_txt.Size = new System.Drawing.Size(441, 20);
+            this.lecFname_txt.Size = new System.Drawing.Size(523, 20);
             this.lecFname_txt.TabIndex = 8;
             // 
             // panel1
@@ -209,7 +209,7 @@
             this.department_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.department_btn.Location = new System.Drawing.Point(3, 318);
             this.department_btn.Name = "department_btn";
-            this.department_btn.Size = new System.Drawing.Size(236, 42);
+            this.department_btn.Size = new System.Drawing.Size(242, 42);
             this.department_btn.TabIndex = 10;
             this.department_btn.Text = "DEPARTMENT";
             this.department_btn.UseVisualStyleBackColor = false;
@@ -227,7 +227,7 @@
             // adminLogout_btn
             // 
             this.adminLogout_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.adminLogout_btn.Location = new System.Drawing.Point(3, 355);
+            this.adminLogout_btn.Location = new System.Drawing.Point(3, 367);
             this.adminLogout_btn.Name = "adminLogout_btn";
             this.adminLogout_btn.Size = new System.Drawing.Size(242, 45);
             this.adminLogout_btn.TabIndex = 8;
@@ -295,6 +295,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Add_Lecturer";
             this.Text = "Add_Lecturer";
+            this.Load += new System.EventHandler(this.Add_Lecturer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);

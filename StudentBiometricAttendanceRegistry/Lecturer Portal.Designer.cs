@@ -164,7 +164,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.DimGray;
-            this.dataGridView1.Location = new System.Drawing.Point(166, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(174, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(433, 259);
             this.dataGridView1.TabIndex = 38;
@@ -180,7 +180,7 @@
             // 
             // captureFingerprint
             // 
-            this.captureFingerprint.Location = new System.Drawing.Point(3, 3);
+            this.captureFingerprint.Location = new System.Drawing.Point(-2, -1);
             this.captureFingerprint.Name = "captureFingerprint";
             this.captureFingerprint.Size = new System.Drawing.Size(150, 126);
             this.captureFingerprint.TabIndex = 34;

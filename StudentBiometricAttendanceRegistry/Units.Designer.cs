@@ -313,6 +313,7 @@
             this.Controls.Add(this.addUnit_btn);
             this.Name = "unitName_cb";
             this.Text = "select unit name";
+            this.Load += new System.EventHandler(this.unitName_cb_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SecuGen.SecuBSPPro.Windows;
+using SecuGen.SecuBSPPro.Windows; 
 using MySql.Data.MySqlClient;
 using System.IO;
 
@@ -193,7 +193,7 @@ namespace StudentBiometricAttendanceRegistry
 
                             }
                                 //if successful
-                                MessageBox.Show("Processing Complete.....");
+                                MessageBox.Show("Processing Complete.....You are registered successfully!");
 
                         }
                         else
@@ -209,8 +209,8 @@ namespace StudentBiometricAttendanceRegistry
                 labelFingerprint.Text = " ";
                 phoneNo_txt.Text = " ";
                 email_txt.Text = " ";
-                selectCourse_cmx .Text = " ";
-                year_txt.Text = " ";
+                selectCourse_cmx .Items.Clear();
+                year_cbx .Items.Clear();
                              
             }
             catch (Exception ex)
@@ -284,6 +284,20 @@ private void captureFingerprint_btn_Click(object sender, EventArgs e)
             Home_frm log = new Home_frm();
             log.Show();
             this.Hide();
+        }
+
+       private void email_txt_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void addUnit_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void frm_menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 

@@ -79,5 +79,14 @@ namespace StudentBiometricAttendanceRegistry
             log.Show();
             this.Hide();
         }
+
+        private void unitName_cb_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void frm_menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
