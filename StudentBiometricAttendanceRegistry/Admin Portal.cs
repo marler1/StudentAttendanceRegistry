@@ -68,9 +68,15 @@ namespace StudentBiometricAttendanceRegistry
 
         private void btnSMS_Click(object sender, EventArgs e)
         {
-            frm_sendSMS sms = new frm_sendSMS();
-            sms.Show();
+
+            frm_message mess = new frm_message();
+            mess.Show();
             this.Hide();
+
+            //frm_sendSMS sms = new frm_sendSMS();
+            //sms.Show();
+            //this.Hide();
+        
         }
     }
 }

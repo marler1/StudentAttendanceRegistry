@@ -63,7 +63,20 @@ namespace StudentBiometricAttendanceRegistry
                 }
                 // return result;
                 MessageBox.Show( result);
+                //clear text boxes
+                txtKey.Text = "";
+                txtmessage.Text = "";
+                txtNum.Text = "";
+                txtSender.Text = "";
+
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Admin_Portal ad = new Admin_Portal();
+            ad.Show();
+            this.Hide();
         }
     }
 }
