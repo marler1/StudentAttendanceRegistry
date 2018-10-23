@@ -129,16 +129,19 @@
             // 
             // lecPassword_txt
             // 
+            this.lecPassword_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lecPassword_txt.Location = new System.Drawing.Point(38, 315);
             this.lecPassword_txt.Name = "lecPassword_txt";
-            this.lecPassword_txt.Size = new System.Drawing.Size(523, 20);
+            this.lecPassword_txt.PasswordChar = '*';
+            this.lecPassword_txt.Size = new System.Drawing.Size(523, 24);
             this.lecPassword_txt.TabIndex = 17;
             // 
             // lecUsername_txt
             // 
+            this.lecUsername_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lecUsername_txt.Location = new System.Drawing.Point(38, 254);
             this.lecUsername_txt.Name = "lecUsername_txt";
-            this.lecUsername_txt.Size = new System.Drawing.Size(523, 20);
+            this.lecUsername_txt.Size = new System.Drawing.Size(523, 24);
             this.lecUsername_txt.TabIndex = 16;
             // 
             // lecPassword
@@ -161,30 +164,34 @@
             // 
             // lecEmail_txt
             // 
+            this.lecEmail_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lecEmail_txt.Location = new System.Drawing.Point(38, 201);
             this.lecEmail_txt.Name = "lecEmail_txt";
-            this.lecEmail_txt.Size = new System.Drawing.Size(523, 20);
+            this.lecEmail_txt.Size = new System.Drawing.Size(523, 24);
             this.lecEmail_txt.TabIndex = 13;
             // 
             // lecTel_txt
             // 
+            this.lecTel_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lecTel_txt.Location = new System.Drawing.Point(36, 147);
             this.lecTel_txt.Name = "lecTel_txt";
-            this.lecTel_txt.Size = new System.Drawing.Size(523, 20);
+            this.lecTel_txt.Size = new System.Drawing.Size(523, 24);
             this.lecTel_txt.TabIndex = 11;
             // 
             // lecLname_txt
             // 
+            this.lecLname_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lecLname_txt.Location = new System.Drawing.Point(38, 94);
             this.lecLname_txt.Name = "lecLname_txt";
-            this.lecLname_txt.Size = new System.Drawing.Size(523, 20);
+            this.lecLname_txt.Size = new System.Drawing.Size(523, 24);
             this.lecLname_txt.TabIndex = 9;
             // 
             // lecFname_txt
             // 
+            this.lecFname_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lecFname_txt.Location = new System.Drawing.Point(37, 41);
             this.lecFname_txt.Name = "lecFname_txt";
-            this.lecFname_txt.Size = new System.Drawing.Size(523, 20);
+            this.lecFname_txt.Size = new System.Drawing.Size(523, 24);
             this.lecFname_txt.TabIndex = 8;
             // 
             // panel1
@@ -279,7 +286,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::StudentBiometricAttendanceRegistry.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(189, 117);
             this.pictureBox1.TabIndex = 0;

@@ -137,7 +137,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Teal;
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(3, 332);
+            this.button2.Location = new System.Drawing.Point(3, 383);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(242, 45);
             this.button2.TabIndex = 9;
@@ -160,7 +160,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Teal;
             this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(-5, 294);
+            this.button4.Location = new System.Drawing.Point(3, 282);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(242, 46);
             this.button4.TabIndex = 6;
@@ -171,7 +171,7 @@
             // 
             this.addUnit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.addUnit_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addUnit_btn.Location = new System.Drawing.Point(0, 221);
+            this.addUnit_btn.Location = new System.Drawing.Point(3, 331);
             this.addUnit_btn.Name = "addUnit_btn";
             this.addUnit_btn.Size = new System.Drawing.Size(242, 46);
             this.addUnit_btn.TabIndex = 6;
@@ -216,7 +216,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.pictureBox3.Image = global::StudentBiometricAttendanceRegistry.Properties.Resources.logo1;
-            this.pictureBox3.Location = new System.Drawing.Point(21, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(21, 10);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(189, 117);
             this.pictureBox3.TabIndex = 0;
@@ -373,6 +373,7 @@
             this.labelFingerprint.Name = "labelFingerprint";
             this.labelFingerprint.Size = new System.Drawing.Size(529, 108);
             this.labelFingerprint.TabIndex = 20;
+            this.labelFingerprint.Visible = false;
             // 
             // registerStudent_btn
             // 

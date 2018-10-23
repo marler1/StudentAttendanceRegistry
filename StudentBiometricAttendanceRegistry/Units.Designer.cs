@@ -117,6 +117,7 @@
             // 
             // unitCode_cb
             // 
+            this.unitCode_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitCode_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unitCode_cb.FormattingEnabled = true;
             this.unitCode_cb.Items.AddRange(new object[] {
@@ -130,10 +131,10 @@
             this.unitCode_cb.Name = "unitCode_cb";
             this.unitCode_cb.Size = new System.Drawing.Size(433, 26);
             this.unitCode_cb.TabIndex = 13;
-            this.unitCode_cb.Text = "Select Unit Code";
             // 
             // year_cb
             // 
+            this.year_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.year_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.year_cb.FormattingEnabled = true;
             this.year_cb.Items.AddRange(new object[] {
@@ -146,10 +147,10 @@
             this.year_cb.Name = "year_cb";
             this.year_cb.Size = new System.Drawing.Size(433, 26);
             this.year_cb.TabIndex = 14;
-            this.year_cb.Text = "select year";
             // 
             // course_cb
             // 
+            this.course_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.course_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.course_cb.FormattingEnabled = true;
             this.course_cb.Items.AddRange(new object[] {
@@ -164,10 +165,10 @@
             this.course_cb.Name = "course_cb";
             this.course_cb.Size = new System.Drawing.Size(433, 26);
             this.course_cb.TabIndex = 15;
-            this.course_cb.Text = "select course";
             // 
             // unitName_txt
             // 
+            this.unitName_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitName_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unitName_txt.FormattingEnabled = true;
             this.unitName_txt.Items.AddRange(new object[] {
@@ -180,7 +181,6 @@
             this.unitName_txt.Name = "unitName_txt";
             this.unitName_txt.Size = new System.Drawing.Size(433, 26);
             this.unitName_txt.TabIndex = 16;
-            this.unitName_txt.Text = "Select unit name";
             // 
             // lecturer_txt
             // 

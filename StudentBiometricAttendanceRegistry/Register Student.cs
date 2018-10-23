@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SecuGen.SecuBSPPro.Windows; 
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Net.Mail;
 
 
 namespace StudentBiometricAttendanceRegistry
@@ -148,9 +149,9 @@ namespace StudentBiometricAttendanceRegistry
 
                 // check connection and connect to the database
                 //String con = string.Empty;
-                con = "Server=127.0.0.1; port=3306; Uid=root; Database=Studentdb; Password=";
+                con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
                 //string sql = string.Empty;
-                sql = @"INSERT  INTO student_details (RegistrationNumber, First_Name,Last_Name,student_passport, Student_Fingerprint, phone_Number, email_Address, course, Year)VALUES (@RegistrationNumber,@FirstName,@LastName, @StudentPassport,@StudentFingerprint, @PhoneNumber, @Email, @Course,@Year)";
+                sql = @"INSERT  INTO student_details (RegistrationNumber, First_Name,Last_Name,Student_Passport, Student_Fingerprint, phone_Number, email_Address, course, Year)VALUES (@RegistrationNumber,@FirstName,@LastName, @StudentPassport,@StudentFingerprint, @PhoneNumber, @Email, @Course,@Year)";
                 using (MySqlConnection sqlcon = new MySqlConnection(con))
                 {
                     sqlcon.Open();
@@ -202,6 +203,7 @@ namespace StudentBiometricAttendanceRegistry
                         }
                     }
                 }
+
                 //clear text boxes
                 regNo_txt.Text = " ";
                 fname_txt.Text = " ";
@@ -211,7 +213,7 @@ namespace StudentBiometricAttendanceRegistry
                 email_txt.Text = " ";
                 selectCourse_cmx .Items.Clear();
                 year_cbx .Items.Clear();
-                             
+                                            
             }
             catch (Exception ex)
             {
@@ -288,7 +290,18 @@ private void captureFingerprint_btn_Click(object sender, EventArgs e)
 
        private void email_txt_TextChanged(object sender, EventArgs e)
         {
-          
+            bool IsValidEmail(string email)
+            {
+                try
+                {
+                    var addr = new System.Net.Mail.MailAddress(email);
+                    return addr.Address == email;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
         }
 
         private void addUnit_btn_Click(object sender, EventArgs e)

@@ -32,7 +32,7 @@ namespace StudentBiometricAttendanceRegistry
                 // check connection to the database
                 // initialize connection to an empty string
                 String con = string.Empty;
-                con = "Server=127.0.0.1; port=3306; Uid=root; Database=Studentdb; Password=";
+                con = "Server=127.0.0.1; SslMode=none;port=3306; Uid=root; Database=Studentdb; Password=";
                 string sql = string.Empty;
                 sql = @"SELECT login.username, login.password, login.role FROM login WHERE username='" + username_txtbox.Text + "' and password='" + password_txtbox.Text + "'";
                 using (MySqlConnection sqlcon = new MySqlConnection(con))

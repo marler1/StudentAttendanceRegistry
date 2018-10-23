@@ -18,11 +18,12 @@ namespace StudentBiometricAttendanceRegistry
 
 
     public partial class Lecturer_Portal : Form
+
     {
         private SecuBSPMx m_SecuBSP;
         private bool m_DeviceOpened;
         private string m_EnrollFIRText;
-        string con = "Server=127.0.0.1; port=3306; Uid=root; Database=Studentdb; Password=";
+        string con = "Server=127.0.0.1;SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
 
         private string m_CaptureFIRText;
 
@@ -149,7 +150,7 @@ namespace StudentBiometricAttendanceRegistry
             {
                 m_CaptureFIRText = m_SecuBSP.FIRTextData;
                 string con = String.Empty;
-                con = "Server=127.0.0.1; port=3306; Uid=root; Database=Studentdb; Password=";
+                con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
                 string sql = string.Empty;
                 sql = @"SELECT * FROM student_details WHERE course='" + course_cb.Text + "' and Year='" + year_cb.Text + "'";
                 using (MySqlConnection sqlcon = new MySqlConnection(con))
@@ -178,6 +179,7 @@ namespace StudentBiometricAttendanceRegistry
                                             {
                                                 StatusBar.Text = "Matched";
                                                 regNo = auth["RegistrationNumber"].ToString();
+                                             
                                                 
                                                 addAttendance(unitAtt_cb.Text, course_cb.Text, regNo);
                                             }
@@ -209,11 +211,15 @@ namespace StudentBiometricAttendanceRegistry
             this.Hide();
         }
         private void addAttendance(string unit, string course, string reg) {
+
+            //fingers used caleb right thumb
+            //evans right index
+            // kerema left thumb
             DateTime dtm = DateTime.Now;
             string dayt = dtm.ToString("yyyy-MM-dd");
             //string readDay;
 
-            string select = @"SELECT * FROM attendance WHERE date='" + dayt + "' and unit='" + unit + "' and course = '" + course +"'";
+            string select = @"SELECT * FROM attendance WHERE  unit='" + unit + "' and RegistrationNumber = '" + reg+"'";
             using (MySqlConnection sqlcon = new MySqlConnection(con))
             {
                 sqlcon.Open();
@@ -221,23 +227,45 @@ namespace StudentBiometricAttendanceRegistry
                 using (MySqlCommand com = new MySqlCommand(select, sqlcon))
                 {
                     using (MySqlDataReader auth = com.ExecuteReader())
-                    {                       
-                                                       
-                           string sql = "INSERT INTO attendance(date,unit,RegistrationNumber,course)VALUES(@date,@unit,@reg,@course)";
-                                using (MySqlConnection cn = new MySqlConnection(con))
+                    {
+                        if (auth.HasRows)
+                        {
+                            while (auth.Read()) {
+                                string attend = auth["counter"].ToString();
+                                string tday = auth["date"].ToString();
+                                if (tday == dayt)
                                 {
-                                    cn.Open();
-                                    using (MySqlCommand cm = new MySqlCommand(sql, cn))
-                                    {
-                                        cm.Parameters.AddWithValue("@date", dayt);
-                                        cm.Parameters.AddWithValue("@unit", unit);
-                                        cm.Parameters.AddWithValue("@reg", reg);
-                                        cm.Parameters.AddWithValue("@course", course);
+                                    MessageBox.Show("Sorry you have already taken attendance for today. Thank you");
+                                }
+                                else {
+                                    int atted = int.Parse(attend) + 1;
+                                    string quer = "UPDATE attendance SET COUNT ='" + atted + "' WHERE RegistrationNumber '" + reg;
+                                }
+                            }
 
-                                        cm.ExecuteNonQuery();
-                                        loadList();
-                                    }
-                                  }
+                           
+                        }
+                        else {
+                            string sql = "INSERT INTO attendance(date,unit,RegistrationNumber,course,counter)VALUES(@date,@unit,@reg,@course,@counter)";
+                            using (MySqlConnection cn = new MySqlConnection(con))
+                            {
+                                cn.Open();
+                                string updateAtt = "1";
+                                using (MySqlCommand cm = new MySqlCommand(sql, cn))
+                                {
+                                    cm.Parameters.AddWithValue("@date", dayt);
+                                    cm.Parameters.AddWithValue("@unit", unit);
+                                    cm.Parameters.AddWithValue("@reg", reg);
+                                    cm.Parameters.AddWithValue("@course", course);
+                                    cm.Parameters.AddWithValue("@counter", updateAtt);
+                                    
+
+                                    cm.ExecuteNonQuery();
+                                    loadList();
+                                }
+                            }
+                        }
+                          
 
                                     }
                                 }
@@ -252,8 +280,8 @@ namespace StudentBiometricAttendanceRegistry
             {
                 DateTime tm = DateTime.Now;
                 string tday = tm.ToString("yyyy-MM-dd");
-                string sql23 = "SELECT * FROM attendance";
-                string conn = "Server=127.0.0.1; port=3306; Uid=root; Database=Studentdb; Password=";
+                string sql23 = "SELECT date, unit, RegistrationNumber, course, counter FROM attendance";
+                string conn = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
 
 
                 using (MySqlConnection sqlcon3 = new MySqlConnection(conn))
@@ -293,6 +321,11 @@ namespace StudentBiometricAttendanceRegistry
         private void frm_menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

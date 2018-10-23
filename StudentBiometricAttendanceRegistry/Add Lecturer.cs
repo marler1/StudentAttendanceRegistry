@@ -28,9 +28,9 @@ namespace StudentBiometricAttendanceRegistry
 
                 // check connection and connect to the database
                 String con = string.Empty;
-                con = "Server=127.0.0.1; port=3306; Uid=root; Database=Studentdb; Password=";
+                con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
                 string sql = string.Empty;
-                sql = @"INSERT  INTO login (lecturer_fName, lecturer_lName,telephone,email,username,password, role)VALUES (@FirstName,@LastName,@Telephone,@Email,@Username,@Password,1)";
+                sql = @"INSERT  INTO login (fName,lName,telephone,email,username,password, role)VALUES (@FirstName,@LastName,@Telephone,@Email,@Username,@Password,1)";
                 using (MySqlConnection sqlcon = new MySqlConnection(con))
                 {
                     sqlcon.Open();

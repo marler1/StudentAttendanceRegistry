@@ -14,6 +14,7 @@ using System.Net;
 using System.Web.Script.Serialization;
 using System.Net.Http;
 using Newtonsoft.Json;
+using MySql.Data.MySqlClient;
 
 namespace StudentBiometricAttendanceRegistry
 {
@@ -31,6 +32,13 @@ namespace StudentBiometricAttendanceRegistry
             //clear text boxes
             txtMessage.Text = " ";
             txtTo.Text = " ";
+            string from = messFrom_txt.Text;
+            from = " ";
+
+            //Post the message communication to the database
+            //handled by the method below
+            sendMessage();
+
         }
         //Note add System.Web.Script.Serialization, using System.Net.Http, Newtonsoft.Json, sytem.Net.Http.Formatting extension reference to the sln
         public class AfricasTalkingGatewayException : Exception
@@ -39,7 +47,7 @@ namespace StudentBiometricAttendanceRegistry
                     : base(message) { }
             public AfricasTalkingGatewayException(Exception ex) : base(ex.Message, ex)
             {
-               
+
             }
         }
         public class AfricasTalkingGateway
@@ -619,14 +627,44 @@ namespace StudentBiometricAttendanceRegistry
             {
                 var result = JsonConvert.SerializeObject(this);
                 return result;
+
+            }
+
+
+        }
+        public  void sendMessage()
+        {
+            string con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
+            string sql = string.Empty;
+            sql = @"INSERT into communications(Year, message, from_lec) Values (@From, @Message)";
+            using (MySqlConnection sqlcon = new MySqlConnection(con))
+            {
+                sqlcon.Open();
+                using (MySqlCommand cmd = new MySqlCommand(sql, sqlcon))
+                {
+                    // get values from users
+                    cmd.Parameters.AddWithValue("@From", messFrom_txt.Text);
+                    cmd.Parameters.AddWithValue("@Message", txtMessage.Text);
+                }
             }
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            Admin_Portal ap = new Admin_Portal();
-            ap.Show();
-            this.Hide();
+            private void btn_back_Click(object sender, EventArgs e)
+            {
+                Admin_Portal ap = new Admin_Portal();
+                ap.Show();
+                this.Hide();
+            }
+
+            private void txtTo_TextChanged(object sender, EventArgs e)
+            {
+
+            }
+
+            private void frm_message_Load(object sender, EventArgs e)
+            {
+
+            }
         }
     }
-}
+
