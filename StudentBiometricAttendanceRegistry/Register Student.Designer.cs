@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -76,6 +77,7 @@
             this.DeviceIDCombo = new System.Windows.Forms.ComboBox();
             this.OpenDeviceBtn = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -85,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passportPicBox)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -189,6 +192,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "ADD LECTURER";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -355,7 +359,7 @@
             this.year_cbx.Location = new System.Drawing.Point(550, 285);
             this.year_cbx.Name = "year_cbx";
             this.year_cbx.Size = new System.Drawing.Size(290, 24);
-            this.year_cbx.TabIndex = 22;
+            this.year_cbx.TabIndex = 15;
             // 
             // year_txt
             // 
@@ -372,7 +376,7 @@
             this.labelFingerprint.Location = new System.Drawing.Point(12, 311);
             this.labelFingerprint.Name = "labelFingerprint";
             this.labelFingerprint.Size = new System.Drawing.Size(529, 108);
-            this.labelFingerprint.TabIndex = 20;
+            this.labelFingerprint.TabIndex = 18;
             this.labelFingerprint.Visible = false;
             // 
             // registerStudent_btn
@@ -409,7 +413,7 @@
             this.selectCourse_cmx.Location = new System.Drawing.Point(550, 243);
             this.selectCourse_cmx.Name = "selectCourse_cmx";
             this.selectCourse_cmx.Size = new System.Drawing.Size(290, 24);
-            this.selectCourse_cmx.TabIndex = 17;
+            this.selectCourse_cmx.TabIndex = 14;
             this.selectCourse_cmx.SelectedIndexChanged += new System.EventHandler(this.selectCourse_cmx_SelectedIndexChanged);
             // 
             // email_txt
@@ -417,7 +421,7 @@
             this.email_txt.Location = new System.Drawing.Point(550, 203);
             this.email_txt.Name = "email_txt";
             this.email_txt.Size = new System.Drawing.Size(290, 22);
-            this.email_txt.TabIndex = 16;
+            this.email_txt.TabIndex = 13;
             this.email_txt.TextChanged += new System.EventHandler(this.email_txt_TextChanged);
             // 
             // course_label
@@ -436,6 +440,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(150, 122);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label1
             // 
@@ -452,7 +457,7 @@
             this.browseimage_btn.Location = new System.Drawing.Point(254, 218);
             this.browseimage_btn.Name = "browseimage_btn";
             this.browseimage_btn.Size = new System.Drawing.Size(104, 42);
-            this.browseimage_btn.TabIndex = 14;
+            this.browseimage_btn.TabIndex = 17;
             this.browseimage_btn.Text = "BROWSE";
             this.browseimage_btn.UseVisualStyleBackColor = false;
             this.browseimage_btn.Click += new System.EventHandler(this.browseimage_btn_Click);
@@ -463,7 +468,7 @@
             this.captureFingerprint_btn.Location = new System.Drawing.Point(19, 191);
             this.captureFingerprint_btn.Name = "captureFingerprint_btn";
             this.captureFingerprint_btn.Size = new System.Drawing.Size(98, 43);
-            this.captureFingerprint_btn.TabIndex = 13;
+            this.captureFingerprint_btn.TabIndex = 16;
             this.captureFingerprint_btn.Text = "CAPTURE";
             this.captureFingerprint_btn.UseVisualStyleBackColor = false;
             this.captureFingerprint_btn.Click += new System.EventHandler(this.captureFingerprint_btn_Click);
@@ -620,6 +625,10 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "Device Name";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Register_Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -629,7 +638,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "Register_Student";
-            this.Text = "Register_Student";
+            this.Text = "14";
             this.Load += new System.EventHandler(this.Register_Student_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -643,6 +652,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passportPicBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -697,5 +707,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox passportPicBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

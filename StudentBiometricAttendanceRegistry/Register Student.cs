@@ -11,6 +11,7 @@ using SecuGen.SecuBSPPro.Windows;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 
 namespace StudentBiometricAttendanceRegistry
@@ -135,6 +136,41 @@ namespace StudentBiometricAttendanceRegistry
         private void registerStudent_btn_Click(object sender, EventArgs e)
         {
             
+            if (regNo_txt.Text != "")
+            {
+                MessageBox.Show("Please key in student Registaration number");
+            }
+            else if (fname_txt.Text != "")
+            {
+                MessageBox.Show("Please key in student First name");
+            }
+            else if(lname_txt.Text != "")
+            {
+                MessageBox.Show("Please key in student last name");
+            }
+            else if (labelFingerprint.Text != "")
+            {
+                MessageBox.Show("Please Scan fingerprint to register");
+            }
+            else if (phoneNo_txt.Text != "")
+            {
+                MessageBox.Show("Please key in student telephone number");
+            }
+            else if (email_txt.Text != "")
+            {
+                MessageBox.Show("Please key in student email address");
+            }
+            else if (selectCourse_cmx.Text != "")
+            {
+                MessageBox.Show("Please select student course");
+            }
+            else if (year_txt.Text != "")
+            {
+                MessageBox.Show("Please select student year of study");
+            }
+
+            else {  
+            
             try
             {
                 // post browsed image to database
@@ -157,8 +193,6 @@ namespace StudentBiometricAttendanceRegistry
                     sqlcon.Open();
                     using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
                     {
-                        if (regNo_txt.Text != "" || fname_txt.Text != "" || lname_txt.Text != "" || labelFingerprint.Text != "" || phoneNo_txt.Text != "" || email_txt.Text != "" || selectCourse_cmx.Text != "" || year_txt.Text != "") 
-                        {
                             ////get values from users
                             com.Parameters.AddWithValue("@RegistrationNumber", regNo_txt.Text);
                             com.Parameters.AddWithValue("@FirstName", fname_txt.Text);
@@ -196,13 +230,11 @@ namespace StudentBiometricAttendanceRegistry
                                 //if successful
                                 MessageBox.Show("Processing Complete.....You are registered successfully!");
 
+                        
+
                         }
-                        else
-                        {
-                            MessageBox.Show("other fields apart from image and course must be filled");
-                        }
+                    
                     }
-                }
 
                 //clear text boxes
                 regNo_txt.Text = " ";
@@ -213,13 +245,17 @@ namespace StudentBiometricAttendanceRegistry
                 email_txt.Text = " ";
                 selectCourse_cmx .Items.Clear();
                 year_cbx .Items.Clear();
+                passportPicBox = null;
                                             
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Problem Adding to database" + ex);
             }
+            }
+           
         }
+
 private void captureFingerprint_btn_Click(object sender, EventArgs e)
         {
             BSPError err;
@@ -290,17 +326,14 @@ private void captureFingerprint_btn_Click(object sender, EventArgs e)
 
        private void email_txt_TextChanged(object sender, EventArgs e)
         {
-            bool IsValidEmail(string email)
+            string pattern = "^([a-zA-Z0-9]+)@([a-zA-Z0-9]+).([a-zA-Z]{2,5})$";
+            if (Regex.IsMatch(email_txt.Text, pattern))
             {
-                try
-                {
-                    var addr = new System.Net.Mail.MailAddress(email);
-                    return addr.Address == email;
-                }
-                catch
-                {
-                    return false;
-                }
+                errorProvider1.Clear();
+            }
+            else
+            {
+                errorProvider1.SetError(this.email_txt, "Please provide a valid email address");
             }
         }
 
@@ -311,6 +344,16 @@ private void captureFingerprint_btn_Click(object sender, EventArgs e)
         private void frm_menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

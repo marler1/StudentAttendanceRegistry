@@ -22,22 +22,47 @@ namespace StudentBiometricAttendanceRegistry
 
         private void submitLecDetails_btb_Click(object sender, EventArgs e)
         {
-            try
+            if (lecFname_txt.Text == "")
             {
-               
-
-                // check connection and connect to the database
-                String con = string.Empty;
-                con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
-                string sql = string.Empty;
-                sql = @"INSERT  INTO login (fName,lName,telephone,email,username,password, role)VALUES (@FirstName,@LastName,@Telephone,@Email,@Username,@Password,1)";
-                using (MySqlConnection sqlcon = new MySqlConnection(con))
+                MessageBox.Show("Please fill in the first name!!");
+            }
+            else if (lecLname_txt.Text == "")
+            {
+                MessageBox.Show("Please fill in the last name!!");
+            }
+            else if (lecTel_txt.Text == "")
+            {
+                MessageBox.Show("Please fill in the Phone Number!!");
+            }
+            else if (lecEmail_txt.Text == "")
+            {
+                MessageBox.Show("Please fill in the Email!!");
+            }
+            else if (lecUsername_txt.Text == "")
+            {
+                MessageBox.Show("Please fill in the Username!!");
+            }
+            else if (lecPassword_txt.Text == "")
+            {
+                MessageBox.Show("Please fill in the Password!!");
+            }
+            else
+            {
+                try
                 {
-                    sqlcon.Open();
-                    using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
+
+
+                    // check connection and connect to the database
+                    String con = string.Empty;
+                    con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
+                    string sql = string.Empty;
+                    sql = @"INSERT  INTO login (fName,lName,telephone,email,username,password, role)VALUES (@FirstName,@LastName,@Telephone,@Email,@Username,@Password,1)";
+                    using (MySqlConnection sqlcon = new MySqlConnection(con))
                     {
-                        if (lecFname_txt.Text != "" || lecLname_txt.Text != "" || lecTel_txt.Text != "" || lecEmail_txt.Text != "" || lecUsername_txt.Text != "" || lecPassword_txt.Text != "")
+                        sqlcon.Open();
+                        using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
                         {
+
                             //get values from users
                             com.Parameters.AddWithValue("@FirstName", lecFname_txt.Text);
                             com.Parameters.AddWithValue("@LastName", lecLname_txt.Text);
@@ -47,38 +72,26 @@ namespace StudentBiometricAttendanceRegistry
                             com.Parameters.AddWithValue("@Password", lecPassword_txt.Text);
                             com.ExecuteNonQuery();
 
-                            Regex emailRegex = new Regex(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?
-                                ^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+
-                                [a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+                            MessageBox.Show("Details submitted successfully");
 
-                            if (emailRegex.IsMatch(lecEmail_txt.Text))
-                            {
-                                MessageBox.Show(lecEmail_txt.Text + "matches the expected format.", "Attention");
-                            }
-                            //if successful
-                            MessageBox.Show("Processing Complete.....");
-                                                                         
-                        }
-                        else
-                        {
-                            MessageBox.Show("All fields are required to be filled");
+
                         }
                     }
+                    // empty text fields
+                    lecFname_txt.Text = " ";
+                    lecLname_txt.Text = " ";
+                    lecTel_txt.Text = " ";
+                    lecEmail_txt.Text = " ";
+                    lecUsername_txt.Text = " ";
+                    lecPassword_txt.Text = " ";
+
                 }
-                // empty text fields
-                lecFname_txt.Text = " ";
-                lecLname_txt.Text = " ";
-                lecTel_txt.Text = " ";
-                lecEmail_txt.Text = " ";
-                lecUsername_txt.Text = " ";
-                lecPassword_txt.Text = " ";
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Problem Adding to database" + ex);
+                }
 
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Problem Adding to database"+ex);
-            }
-         
         }
 
         private void addLec_btn_Click(object sender, EventArgs e)
@@ -106,5 +119,20 @@ namespace StudentBiometricAttendanceRegistry
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void lecEmail_txt_TextChanged(object sender, EventArgs e)
+        {
+            
+            string pattern = "^([a-zA-Z0-9]+)@([a-zA-Z0-9]+).([a-zA-Z]{2,5})$";
+            if (Regex.IsMatch(lecEmail_txt.Text, pattern))
+            {
+                errorProvider1.Clear();
+            }
+            else
+            {
+                errorProvider1.SetError(this.lecEmail_txt, "Please provide a valid email address");
+            }
+        }
+
     }
 }

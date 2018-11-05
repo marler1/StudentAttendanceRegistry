@@ -32,8 +32,7 @@ namespace StudentBiometricAttendanceRegistry
             //clear text boxes
             txtMessage.Text = " ";
             txtTo.Text = " ";
-            string from = messFrom_txt.Text;
-            from = " ";
+            messFrom_txt.Text = "";
 
             //Post the message communication to the database
             //handled by the method below

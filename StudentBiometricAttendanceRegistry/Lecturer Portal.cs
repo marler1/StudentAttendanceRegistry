@@ -327,6 +327,13 @@ namespace StudentBiometricAttendanceRegistry
         {
 
         }
+
+        private void viewReport_btn_Click(object sender, EventArgs e)
+        {
+            attReport_frm attR = new attReport_frm();
+            attR.Show();
+            
+        }
     }
 }
 

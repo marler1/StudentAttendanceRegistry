@@ -52,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.course_cb = new System.Windows.Forms.ComboBox();
             this.lecLogout_btn = new System.Windows.Forms.Button();
+            this.viewReport_btn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelcapture.SuspendLayout();
@@ -138,6 +139,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.viewReport_btn);
             this.groupBox1.Controls.Add(this.panelcapture);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -146,7 +148,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1020, 418);
+            this.groupBox1.Size = new System.Drawing.Size(1062, 474);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Verifying with details from the database";
@@ -178,7 +180,7 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(174, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(166, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView1.Size = new System.Drawing.Size(433, 259);
@@ -335,12 +337,23 @@
             this.lecLogout_btn.UseVisualStyleBackColor = false;
             this.lecLogout_btn.Click += new System.EventHandler(this.lecLogout_btn_Click);
             // 
+            // viewReport_btn
+            // 
+            this.viewReport_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.viewReport_btn.Location = new System.Drawing.Point(828, 417);
+            this.viewReport_btn.Name = "viewReport_btn";
+            this.viewReport_btn.Size = new System.Drawing.Size(161, 40);
+            this.viewReport_btn.TabIndex = 43;
+            this.viewReport_btn.Text = "View Report";
+            this.viewReport_btn.UseVisualStyleBackColor = false;
+            this.viewReport_btn.Click += new System.EventHandler(this.viewReport_btn_Click);
+            // 
             // Lecturer_Portal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1061, 476);
+            this.ClientSize = new System.Drawing.Size(1105, 509);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lecLogout_btn);
@@ -386,5 +399,6 @@
         private System.Windows.Forms.Button btnStartclass;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button viewReport_btn;
     }
 }
