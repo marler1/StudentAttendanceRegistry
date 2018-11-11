@@ -58,7 +58,7 @@
             // 
             // username_txtbox
             // 
-            this.username_txtbox.Location = new System.Drawing.Point(68, 105);
+            this.username_txtbox.Location = new System.Drawing.Point(68, 113);
             this.username_txtbox.Name = "username_txtbox";
             this.username_txtbox.Size = new System.Drawing.Size(305, 24);
             this.username_txtbox.TabIndex = 1;
@@ -169,7 +169,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Home_frm";
-            this.Text = "Home";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.Home_frm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

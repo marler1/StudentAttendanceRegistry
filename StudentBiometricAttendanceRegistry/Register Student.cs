@@ -136,40 +136,41 @@ namespace StudentBiometricAttendanceRegistry
         private void registerStudent_btn_Click(object sender, EventArgs e)
         {
             
-            if (regNo_txt.Text != "")
+            if (regNo_txt.Text == "")
             {
                 MessageBox.Show("Please key in student Registaration number");
             }
-            else if (fname_txt.Text != "")
+            else if (fname_txt.Text == "")
             {
                 MessageBox.Show("Please key in student First name");
             }
-            else if(lname_txt.Text != "")
+            else if(lname_txt.Text == "")
             {
                 MessageBox.Show("Please key in student last name");
             }
-            else if (labelFingerprint.Text != "")
+            else if (labelFingerprint.Text == "")
             {
                 MessageBox.Show("Please Scan fingerprint to register");
             }
-            else if (phoneNo_txt.Text != "")
+            else if (phoneNo_txt.Text == "")
             {
                 MessageBox.Show("Please key in student telephone number");
             }
-            else if (email_txt.Text != "")
+            else if (email_txt.Text == "")
             {
                 MessageBox.Show("Please key in student email address");
             }
-            else if (selectCourse_cmx.Text != "")
+            else if (selectCourse_cmx.Text == "")
             {
                 MessageBox.Show("Please select student course");
             }
-            else if (year_txt.Text != "")
+            else if (year_txt.Text == "")
             {
                 MessageBox.Show("Please select student year of study");
             }
 
-            else {  
+            else
+            {  
             
             try
             {
@@ -245,7 +246,7 @@ namespace StudentBiometricAttendanceRegistry
                 email_txt.Text = " ";
                 selectCourse_cmx .Items.Clear();
                 year_cbx .Items.Clear();
-                passportPicBox = null;
+                passportPicBox.Image = null;
                                             
             }
             catch (Exception ex)

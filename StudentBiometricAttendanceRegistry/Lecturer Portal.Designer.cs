@@ -37,6 +37,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.viewReport_btn = new System.Windows.Forms.Button();
             this.panelcapture = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,7 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.course_cb = new System.Windows.Forms.ComboBox();
             this.lecLogout_btn = new System.Windows.Forms.Button();
-            this.viewReport_btn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panelcapture.SuspendLayout();
@@ -144,14 +144,25 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(37, 49);
+            this.groupBox1.Location = new System.Drawing.Point(2, 49);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1062, 474);
+            this.groupBox1.Size = new System.Drawing.Size(1097, 474);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Verifying with details from the database";
+            // 
+            // viewReport_btn
+            // 
+            this.viewReport_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.viewReport_btn.Location = new System.Drawing.Point(911, 417);
+            this.viewReport_btn.Name = "viewReport_btn";
+            this.viewReport_btn.Size = new System.Drawing.Size(161, 40);
+            this.viewReport_btn.TabIndex = 43;
+            this.viewReport_btn.Text = "View Report";
+            this.viewReport_btn.UseVisualStyleBackColor = false;
+            this.viewReport_btn.Click += new System.EventHandler(this.viewReport_btn_Click);
             // 
             // panelcapture
             // 
@@ -159,9 +170,9 @@
             this.panelcapture.Controls.Add(this.panel1);
             this.panelcapture.Controls.Add(this.StatusBar);
             this.panelcapture.Controls.Add(this.captureFingerprint_btn);
-            this.panelcapture.Location = new System.Drawing.Point(413, 144);
+            this.panelcapture.Location = new System.Drawing.Point(324, 144);
             this.panelcapture.Name = "panelcapture";
-            this.panelcapture.Size = new System.Drawing.Size(607, 267);
+            this.panelcapture.Size = new System.Drawing.Size(765, 267);
             this.panelcapture.TabIndex = 42;
             // 
             // dataGridView1
@@ -183,7 +194,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(166, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dataGridView1.Size = new System.Drawing.Size(433, 259);
+            this.dataGridView1.Size = new System.Drawing.Size(596, 259);
             this.dataGridView1.TabIndex = 38;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -206,9 +217,9 @@
             // 
             // StatusBar
             // 
-            this.StatusBar.Location = new System.Drawing.Point(7, 181);
+            this.StatusBar.Location = new System.Drawing.Point(7, 184);
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(158, 81);
+            this.StatusBar.Size = new System.Drawing.Size(153, 60);
             this.StatusBar.TabIndex = 36;
             // 
             // captureFingerprint_btn
@@ -234,7 +245,7 @@
             this.groupBox3.Controls.Add(this.course_cb);
             this.groupBox3.Location = new System.Drawing.Point(8, 44);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(393, 367);
+            this.groupBox3.Size = new System.Drawing.Size(310, 367);
             this.groupBox3.TabIndex = 41;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Unit Details";
@@ -243,7 +254,7 @@
             // btnStartclass
             // 
             this.btnStartclass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnStartclass.Location = new System.Drawing.Point(150, 299);
+            this.btnStartclass.Location = new System.Drawing.Point(95, 284);
             this.btnStartclass.Name = "btnStartclass";
             this.btnStartclass.Size = new System.Drawing.Size(161, 40);
             this.btnStartclass.TabIndex = 39;
@@ -261,9 +272,9 @@
             "3",
             "2",
             "1"});
-            this.year_cb.Location = new System.Drawing.Point(133, 141);
+            this.year_cb.Location = new System.Drawing.Point(72, 141);
             this.year_cb.Name = "year_cb";
-            this.year_cb.Size = new System.Drawing.Size(251, 26);
+            this.year_cb.Size = new System.Drawing.Size(225, 26);
             this.year_cb.TabIndex = 37;
             // 
             // unitAtt_cb
@@ -276,15 +287,15 @@
             "Human Computer Interactions",
             "Fundamentals of Computeter Security",
             "Computer Network Design"});
-            this.unitAtt_cb.Location = new System.Drawing.Point(133, 226);
+            this.unitAtt_cb.Location = new System.Drawing.Point(72, 223);
             this.unitAtt_cb.Name = "unitAtt_cb";
-            this.unitAtt_cb.Size = new System.Drawing.Size(251, 26);
+            this.unitAtt_cb.Size = new System.Drawing.Size(225, 26);
             this.unitAtt_cb.TabIndex = 39;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(73, 229);
+            this.label5.Location = new System.Drawing.Point(28, 226);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 18);
             this.label5.TabIndex = 40;
@@ -293,7 +304,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 144);
+            this.label3.Location = new System.Drawing.Point(24, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 31;
@@ -303,7 +314,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 60);
+            this.label2.Location = new System.Drawing.Point(6, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 18);
             this.label2.TabIndex = 28;
@@ -321,9 +332,9 @@
             "BSc. Mechanical Enginnering",
             "BSc. Civil Enginnering",
             "BSc. Nursing"});
-            this.course_cb.Location = new System.Drawing.Point(133, 57);
+            this.course_cb.Location = new System.Drawing.Point(72, 57);
             this.course_cb.Name = "course_cb";
-            this.course_cb.Size = new System.Drawing.Size(251, 26);
+            this.course_cb.Size = new System.Drawing.Size(225, 26);
             this.course_cb.TabIndex = 33;
             // 
             // lecLogout_btn
@@ -336,17 +347,6 @@
             this.lecLogout_btn.Text = "LOGOUT";
             this.lecLogout_btn.UseVisualStyleBackColor = false;
             this.lecLogout_btn.Click += new System.EventHandler(this.lecLogout_btn_Click);
-            // 
-            // viewReport_btn
-            // 
-            this.viewReport_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.viewReport_btn.Location = new System.Drawing.Point(828, 417);
-            this.viewReport_btn.Name = "viewReport_btn";
-            this.viewReport_btn.Size = new System.Drawing.Size(161, 40);
-            this.viewReport_btn.TabIndex = 43;
-            this.viewReport_btn.Text = "View Report";
-            this.viewReport_btn.UseVisualStyleBackColor = false;
-            this.viewReport_btn.Click += new System.EventHandler(this.viewReport_btn_Click);
             // 
             // Lecturer_Portal
             // 

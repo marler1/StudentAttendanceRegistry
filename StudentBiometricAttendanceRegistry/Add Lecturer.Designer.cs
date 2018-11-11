@@ -80,7 +80,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 131);
+            this.label3.Location = new System.Drawing.Point(33, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 4;
@@ -177,10 +177,12 @@
             // lecTel_txt
             // 
             this.lecTel_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecTel_txt.Location = new System.Drawing.Point(36, 147);
+            this.lecTel_txt.Location = new System.Drawing.Point(33, 155);
+            this.lecTel_txt.MaxLength = 10;
             this.lecTel_txt.Name = "lecTel_txt";
             this.lecTel_txt.Size = new System.Drawing.Size(523, 24);
             this.lecTel_txt.TabIndex = 11;
+            this.lecTel_txt.TextChanged += new System.EventHandler(this.lecTel_txt_TextChanged);
             // 
             // lecLname_txt
             // 

@@ -129,7 +129,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(3, 126);
+            this.button1.Location = new System.Drawing.Point(1, 135);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(242, 45);
             this.button1.TabIndex = 10;
@@ -140,7 +140,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Teal;
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(3, 383);
+            this.button2.Location = new System.Drawing.Point(3, 399);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(242, 45);
             this.button2.TabIndex = 9;
@@ -163,7 +163,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Teal;
             this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(3, 282);
+            this.button4.Location = new System.Drawing.Point(3, 295);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(242, 46);
             this.button4.TabIndex = 6;
@@ -174,7 +174,7 @@
             // 
             this.addUnit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.addUnit_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addUnit_btn.Location = new System.Drawing.Point(3, 331);
+            this.addUnit_btn.Location = new System.Drawing.Point(3, 347);
             this.addUnit_btn.Name = "addUnit_btn";
             this.addUnit_btn.Size = new System.Drawing.Size(242, 46);
             this.addUnit_btn.TabIndex = 6;
@@ -186,7 +186,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.Teal;
             this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(3, 228);
+            this.button5.Location = new System.Drawing.Point(3, 238);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(242, 46);
             this.button5.TabIndex = 4;
@@ -198,7 +198,7 @@
             // 
             this.button6.BackColor = System.Drawing.Color.Teal;
             this.button6.ForeColor = System.Drawing.Color.Transparent;
-            this.button6.Location = new System.Drawing.Point(3, 177);
+            this.button6.Location = new System.Drawing.Point(3, 187);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(242, 45);
             this.button6.TabIndex = 2;

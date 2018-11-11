@@ -134,5 +134,11 @@ namespace StudentBiometricAttendanceRegistry
             }
         }
 
+        private void lecTel_txt_TextChanged(object sender, EventArgs e)
+        {
+           /* string DisallowChar;
+            DisallowChar = ",<.>/:;{[']}@#$%^*_!`";
+            if char.IsLetter(e.KeyChar) = true */
+        }
     }
 }

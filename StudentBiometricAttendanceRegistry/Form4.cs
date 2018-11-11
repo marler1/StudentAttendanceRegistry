@@ -14,10 +14,11 @@ namespace StudentBiometricAttendanceRegistry
 {
     public partial class attReport_frm : Form
     {
-        public attReport_frm()
+        public attReport_frm(string course, string unit)
         {
             InitializeComponent();
-
+            lblCourse.Text = course;
+            lblUnit.Text = unit;
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
@@ -35,20 +36,22 @@ namespace StudentBiometricAttendanceRegistry
 
         private void loadList()
         {
+            
             try
             {
+                
                 DateTime tm = DateTime.Now;
                 string tday = tm.ToString("yyyy-MM-dd");
-                string sql23 = "SELECT date, unit, RegistrationNumber, course, counter FROM attendance";
+                string sql23 = "SELECT date,  RegistrationNumber, fName, lName, counter FROM attendance";
                 string conn = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
 
 
                 using (MySqlConnection sqlcon3 = new MySqlConnection(conn))
                 {
                     MySqlDataAdapter adapt = new MySqlDataAdapter(sql23, sqlcon3);
-                    DataTable dt = new DataTable();
-                    adapt.Fill(dt);
-                    dataGridView1.DataSource = dt;
+                    DataTable dyta = new DataTable();
+                    adapt.Fill(dyta);
+                    dataGridView1.DataSource = dyta;
                     sqlcon3.Close();
                 }
             }
