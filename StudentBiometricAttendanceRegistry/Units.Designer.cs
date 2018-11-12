@@ -41,23 +41,23 @@
             this.lecturer_txt = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.department_btn = new System.Windows.Forms.Button();
-            this.addCourse_btn = new System.Windows.Forms.Button();
             this.adminLogout_btn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.addLec_btn = new System.Windows.Forms.Button();
             this.regStudent_btn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_back = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // addUnit_btn
             // 
-            this.addUnit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.addUnit_btn.BackColor = System.Drawing.Color.Green;
             this.addUnit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addUnit_btn.ForeColor = System.Drawing.Color.Black;
-            this.addUnit_btn.Location = new System.Drawing.Point(440, 370);
+            this.addUnit_btn.Location = new System.Drawing.Point(631, 431);
             this.addUnit_btn.Name = "addUnit_btn";
             this.addUnit_btn.Size = new System.Drawing.Size(140, 56);
             this.addUnit_btn.TabIndex = 0;
@@ -79,7 +79,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(352, 124);
+            this.label2.Location = new System.Drawing.Point(352, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 18);
             this.label2.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(352, 179);
+            this.label3.Location = new System.Drawing.Point(352, 201);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 18);
             this.label3.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(352, 234);
+            this.label4.Location = new System.Drawing.Point(352, 261);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 18);
             this.label4.TabIndex = 5;
@@ -109,7 +109,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(352, 290);
+            this.label5.Location = new System.Drawing.Point(352, 328);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 18);
             this.label5.TabIndex = 6;
@@ -143,7 +143,7 @@
             "3",
             "2",
             "1"});
-            this.year_cb.Location = new System.Drawing.Point(355, 311);
+            this.year_cb.Location = new System.Drawing.Point(355, 349);
             this.year_cb.Name = "year_cb";
             this.year_cb.Size = new System.Drawing.Size(433, 26);
             this.year_cb.TabIndex = 14;
@@ -161,7 +161,7 @@
             "BSc. Mechanical Enginnering",
             "BSc. Civil Enginnering",
             "BSc. Nursing"});
-            this.course_cb.Location = new System.Drawing.Point(355, 256);
+            this.course_cb.Location = new System.Drawing.Point(355, 282);
             this.course_cb.Name = "course_cb";
             this.course_cb.Size = new System.Drawing.Size(433, 26);
             this.course_cb.TabIndex = 15;
@@ -177,7 +177,7 @@
             "Human Computer Interactions",
             "Fundamentals of Computeter Security",
             "Computer Network Design"});
-            this.unitName_txt.Location = new System.Drawing.Point(355, 146);
+            this.unitName_txt.Location = new System.Drawing.Point(355, 147);
             this.unitName_txt.Name = "unitName_txt";
             this.unitName_txt.Size = new System.Drawing.Size(433, 26);
             this.unitName_txt.TabIndex = 16;
@@ -185,7 +185,7 @@
             // lecturer_txt
             // 
             this.lecturer_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecturer_txt.Location = new System.Drawing.Point(355, 201);
+            this.lecturer_txt.Location = new System.Drawing.Point(355, 222);
             this.lecturer_txt.Name = "lecturer_txt";
             this.lecturer_txt.Size = new System.Drawing.Size(433, 24);
             this.lecturer_txt.TabIndex = 17;
@@ -194,7 +194,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.department_btn);
-            this.panel1.Controls.Add(this.addCourse_btn);
             this.panel1.Controls.Add(this.adminLogout_btn);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.addLec_btn);
@@ -218,17 +217,6 @@
             this.department_btn.Text = "HOME";
             this.department_btn.UseVisualStyleBackColor = false;
             // 
-            // addCourse_btn
-            // 
-            this.addCourse_btn.BackColor = System.Drawing.Color.Teal;
-            this.addCourse_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addCourse_btn.Location = new System.Drawing.Point(3, 332);
-            this.addCourse_btn.Name = "addCourse_btn";
-            this.addCourse_btn.Size = new System.Drawing.Size(242, 45);
-            this.addCourse_btn.TabIndex = 9;
-            this.addCourse_btn.Text = "ADD COURSE";
-            this.addCourse_btn.UseVisualStyleBackColor = false;
-            // 
             // adminLogout_btn
             // 
             this.adminLogout_btn.BackColor = System.Drawing.Color.Teal;
@@ -245,18 +233,19 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(3, 280);
+            this.button1.Location = new System.Drawing.Point(0, 317);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(242, 46);
             this.button1.TabIndex = 6;
             this.button1.Text = "ADD UNIT";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // addLec_btn
             // 
             this.addLec_btn.BackColor = System.Drawing.Color.Teal;
             this.addLec_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addLec_btn.Location = new System.Drawing.Point(3, 228);
+            this.addLec_btn.Location = new System.Drawing.Point(3, 250);
             this.addLec_btn.Name = "addLec_btn";
             this.addLec_btn.Size = new System.Drawing.Size(242, 46);
             this.addLec_btn.TabIndex = 4;
@@ -267,7 +256,7 @@
             // 
             this.regStudent_btn.BackColor = System.Drawing.Color.Teal;
             this.regStudent_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.regStudent_btn.Location = new System.Drawing.Point(3, 177);
+            this.regStudent_btn.Location = new System.Drawing.Point(3, 189);
             this.regStudent_btn.Name = "regStudent_btn";
             this.regStudent_btn.Size = new System.Drawing.Size(242, 45);
             this.regStudent_btn.TabIndex = 2;
@@ -277,7 +266,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Teal;
+            this.label6.BackColor = System.Drawing.Color.Green;
             this.label6.ForeColor = System.Drawing.Color.Transparent;
             this.label6.Location = new System.Drawing.Point(42, 93);
             this.label6.Name = "label6";
@@ -287,6 +276,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Green;
             this.pictureBox1.Image = global::StudentBiometricAttendanceRegistry.Properties.Resources.logo1;
             this.pictureBox1.Location = new System.Drawing.Point(33, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -294,11 +284,26 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.Color.Maroon;
+            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.ForeColor = System.Drawing.Color.White;
+            this.btn_back.Location = new System.Drawing.Point(355, 430);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(140, 56);
+            this.btn_back.TabIndex = 19;
+            this.btn_back.Text = "BACK";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // unitName_cb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(853, 499);
+            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lecturer_txt);
             this.Controls.Add(this.unitName_txt);
@@ -337,12 +342,12 @@
         private System.Windows.Forms.TextBox lecturer_txt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button department_btn;
-        private System.Windows.Forms.Button addCourse_btn;
         private System.Windows.Forms.Button adminLogout_btn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button addLec_btn;
         private System.Windows.Forms.Button regStudent_btn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_back;
     }
 }

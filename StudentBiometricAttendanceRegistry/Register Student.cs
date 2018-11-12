@@ -356,6 +356,18 @@ private void captureFingerprint_btn_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnSMS_Click(object sender, EventArgs e)
+        {
+            frm_message mess = new frm_message();
+            mess.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

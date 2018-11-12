@@ -24,9 +24,9 @@ namespace StudentBiometricAttendanceRegistry
 
         private void AddLec_btn_Click(object sender, EventArgs e)
         {
-            Add_Lecturer addlec = new Add_Lecturer();
+           /* Add_Lecturer addlec = new Add_Lecturer();
             addlec.Show();
-            this.Show();
+            this.Show();*/
         }
         private void addLec_btn_Click_1(object sender, EventArgs e)
         {
@@ -59,11 +59,6 @@ namespace StudentBiometricAttendanceRegistry
             Home_frm log = new Home_frm();
             log.Show();
             this.Hide();
-        }
-
-        private void addCourse_btn_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnSMS_Click(object sender, EventArgs e)

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSMS = new System.Windows.Forms.Button();
             this.department_btn = new System.Windows.Forms.Button();
-            this.addCourse_btn = new System.Windows.Forms.Button();
             this.adminLogout_btn = new System.Windows.Forms.Button();
             this.addUnit_btn = new System.Windows.Forms.Button();
             this.addLec_btn = new System.Windows.Forms.Button();
@@ -39,7 +39,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSMS = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +48,6 @@
             this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.btnSMS);
             this.panel1.Controls.Add(this.department_btn);
-            this.panel1.Controls.Add(this.addCourse_btn);
             this.panel1.Controls.Add(this.adminLogout_btn);
             this.panel1.Controls.Add(this.addUnit_btn);
             this.panel1.Controls.Add(this.addLec_btn);
@@ -62,6 +60,18 @@
             this.panel1.Size = new System.Drawing.Size(261, 492);
             this.panel1.TabIndex = 10;
             // 
+            // btnSMS
+            // 
+            this.btnSMS.BackColor = System.Drawing.Color.Teal;
+            this.btnSMS.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSMS.Location = new System.Drawing.Point(3, 377);
+            this.btnSMS.Name = "btnSMS";
+            this.btnSMS.Size = new System.Drawing.Size(242, 45);
+            this.btnSMS.TabIndex = 11;
+            this.btnSMS.Text = "SEND SMS";
+            this.btnSMS.UseVisualStyleBackColor = false;
+            this.btnSMS.Click += new System.EventHandler(this.btnSMS_Click);
+            // 
             // department_btn
             // 
             this.department_btn.BackColor = System.Drawing.Color.Teal;
@@ -73,18 +83,6 @@
             this.department_btn.Text = "HOME";
             this.department_btn.UseVisualStyleBackColor = false;
             this.department_btn.Click += new System.EventHandler(this.department_btn_Click);
-            // 
-            // addCourse_btn
-            // 
-            this.addCourse_btn.BackColor = System.Drawing.Color.Teal;
-            this.addCourse_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addCourse_btn.Location = new System.Drawing.Point(3, 332);
-            this.addCourse_btn.Name = "addCourse_btn";
-            this.addCourse_btn.Size = new System.Drawing.Size(242, 45);
-            this.addCourse_btn.TabIndex = 9;
-            this.addCourse_btn.Text = "ADD COURSE";
-            this.addCourse_btn.UseVisualStyleBackColor = false;
-            this.addCourse_btn.Click += new System.EventHandler(this.addCourse_btn_Click);
             // 
             // adminLogout_btn
             // 
@@ -102,7 +100,7 @@
             // 
             this.addUnit_btn.BackColor = System.Drawing.Color.Teal;
             this.addUnit_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addUnit_btn.Location = new System.Drawing.Point(3, 280);
+            this.addUnit_btn.Location = new System.Drawing.Point(3, 306);
             this.addUnit_btn.Name = "addUnit_btn";
             this.addUnit_btn.Size = new System.Drawing.Size(242, 46);
             this.addUnit_btn.TabIndex = 6;
@@ -114,7 +112,7 @@
             // 
             this.addLec_btn.BackColor = System.Drawing.Color.Teal;
             this.addLec_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.addLec_btn.Location = new System.Drawing.Point(3, 228);
+            this.addLec_btn.Location = new System.Drawing.Point(3, 244);
             this.addLec_btn.Name = "addLec_btn";
             this.addLec_btn.Size = new System.Drawing.Size(242, 46);
             this.addLec_btn.TabIndex = 4;
@@ -126,7 +124,7 @@
             // 
             this.regStudent_btn.BackColor = System.Drawing.Color.Teal;
             this.regStudent_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.regStudent_btn.Location = new System.Drawing.Point(3, 177);
+            this.regStudent_btn.Location = new System.Drawing.Point(3, 193);
             this.regStudent_btn.Name = "regStudent_btn";
             this.regStudent_btn.Size = new System.Drawing.Size(242, 45);
             this.regStudent_btn.TabIndex = 2;
@@ -177,18 +175,6 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Better life Through Technology";
             // 
-            // btnSMS
-            // 
-            this.btnSMS.BackColor = System.Drawing.Color.Teal;
-            this.btnSMS.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSMS.Location = new System.Drawing.Point(3, 383);
-            this.btnSMS.Name = "btnSMS";
-            this.btnSMS.Size = new System.Drawing.Size(242, 45);
-            this.btnSMS.TabIndex = 11;
-            this.btnSMS.Text = "SEND SMS";
-            this.btnSMS.UseVisualStyleBackColor = false;
-            this.btnSMS.Click += new System.EventHandler(this.btnSMS_Click);
-            // 
             // Admin_Portal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,7 +200,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button department_btn;
-        private System.Windows.Forms.Button addCourse_btn;
         private System.Windows.Forms.Button adminLogout_btn;
         private System.Windows.Forms.Button addUnit_btn;
         private System.Windows.Forms.Button addLec_btn;

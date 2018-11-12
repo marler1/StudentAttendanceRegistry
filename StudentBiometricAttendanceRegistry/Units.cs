@@ -88,5 +88,17 @@ namespace StudentBiometricAttendanceRegistry
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Admin_Portal ap = new Admin_Portal();
+            ap.Show();
+            this.Hide();
+        }
     }
 }

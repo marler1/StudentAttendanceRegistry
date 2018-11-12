@@ -99,12 +99,16 @@ namespace StudentBiometricAttendanceRegistry
 
         private void addLec_btn_Click(object sender, EventArgs e)
         {
-
+            Add_Lecturer addlec = new Add_Lecturer();
+            addlec.Show();
+            this.Show();
         }
 
         private void regStudent_btn_Click(object sender, EventArgs e)
         {
-
+            Register_Student reg = new Register_Student();
+            reg.Show();
+            this.Hide();
         }
 
         private void adminLogout_btn_Click(object sender, EventArgs e)
@@ -116,7 +120,7 @@ namespace StudentBiometricAttendanceRegistry
 
         private void Add_Lecturer_Load(object sender, EventArgs e)
         {
-
+        
         }
         private void frm_menu_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -148,6 +152,33 @@ namespace StudentBiometricAttendanceRegistry
             {
                 MessageBox.Show("Invalid phone number");
             }*/
+        }
+            public int per(int counter)
+            {
+                int tynge = 3 + 7;
+                return tynge;
+            }
+
+        private void addUnit_btn_Click(object sender, EventArgs e)
+        {
+            unitName_cb addUnit = new unitName_cb();
+            addUnit.Show();
+            this.Hide();
+        }
+
+        private void btnSMS_Click(object sender, EventArgs e)
+        {
+
+            frm_message mess = new frm_message();
+            mess.Show();
+            this.Hide();
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Admin_Portal ap = new Admin_Portal();
+            ap.Show();
+            this.Hide();
         }
     }
 }

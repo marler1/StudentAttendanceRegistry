@@ -44,8 +44,7 @@
             this.lecLname_txt = new System.Windows.Forms.TextBox();
             this.lecFname_txt = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.department_btn = new System.Windows.Forms.Button();
-            this.addCourse_btn = new System.Windows.Forms.Button();
+            this.btnSMS = new System.Windows.Forms.Button();
             this.adminLogout_btn = new System.Windows.Forms.Button();
             this.addUnit_btn = new System.Windows.Forms.Button();
             this.addLec_btn = new System.Windows.Forms.Button();
@@ -53,6 +52,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btn_back = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,7 +99,7 @@
             // 
             this.submitLecDetails_btb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.submitLecDetails_btb.ForeColor = System.Drawing.Color.White;
-            this.submitLecDetails_btb.Location = new System.Drawing.Point(197, 352);
+            this.submitLecDetails_btb.Location = new System.Drawing.Point(415, 355);
             this.submitLecDetails_btb.Name = "submitLecDetails_btb";
             this.submitLecDetails_btb.Size = new System.Drawing.Size(141, 42);
             this.submitLecDetails_btb.TabIndex = 7;
@@ -110,6 +110,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.btn_back);
             this.groupBox1.Controls.Add(this.lecPassword_txt);
             this.groupBox1.Controls.Add(this.lecUsername_txt);
             this.groupBox1.Controls.Add(this.lecPassword);
@@ -133,18 +134,18 @@
             // lecPassword_txt
             // 
             this.lecPassword_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecPassword_txt.Location = new System.Drawing.Point(38, 315);
+            this.lecPassword_txt.Location = new System.Drawing.Point(36, 315);
             this.lecPassword_txt.Name = "lecPassword_txt";
             this.lecPassword_txt.PasswordChar = '*';
-            this.lecPassword_txt.Size = new System.Drawing.Size(523, 24);
+            this.lecPassword_txt.Size = new System.Drawing.Size(520, 24);
             this.lecPassword_txt.TabIndex = 17;
             // 
             // lecUsername_txt
             // 
             this.lecUsername_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecUsername_txt.Location = new System.Drawing.Point(38, 254);
+            this.lecUsername_txt.Location = new System.Drawing.Point(36, 254);
             this.lecUsername_txt.Name = "lecUsername_txt";
-            this.lecUsername_txt.Size = new System.Drawing.Size(523, 24);
+            this.lecUsername_txt.Size = new System.Drawing.Size(520, 24);
             this.lecUsername_txt.TabIndex = 16;
             // 
             // lecPassword
@@ -168,19 +169,19 @@
             // lecEmail_txt
             // 
             this.lecEmail_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecEmail_txt.Location = new System.Drawing.Point(38, 201);
+            this.lecEmail_txt.Location = new System.Drawing.Point(36, 201);
             this.lecEmail_txt.Name = "lecEmail_txt";
-            this.lecEmail_txt.Size = new System.Drawing.Size(523, 24);
+            this.lecEmail_txt.Size = new System.Drawing.Size(520, 24);
             this.lecEmail_txt.TabIndex = 13;
             this.lecEmail_txt.TextChanged += new System.EventHandler(this.lecEmail_txt_TextChanged);
             // 
             // lecTel_txt
             // 
             this.lecTel_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lecTel_txt.Location = new System.Drawing.Point(33, 155);
+            this.lecTel_txt.Location = new System.Drawing.Point(37, 155);
             this.lecTel_txt.MaxLength = 10;
             this.lecTel_txt.Name = "lecTel_txt";
-            this.lecTel_txt.Size = new System.Drawing.Size(523, 24);
+            this.lecTel_txt.Size = new System.Drawing.Size(519, 24);
             this.lecTel_txt.TabIndex = 11;
             this.lecTel_txt.TextChanged += new System.EventHandler(this.lecTel_txt_TextChanged);
             // 
@@ -189,7 +190,7 @@
             this.lecLname_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lecLname_txt.Location = new System.Drawing.Point(38, 94);
             this.lecLname_txt.Name = "lecLname_txt";
-            this.lecLname_txt.Size = new System.Drawing.Size(523, 24);
+            this.lecLname_txt.Size = new System.Drawing.Size(518, 24);
             this.lecLname_txt.TabIndex = 9;
             // 
             // lecFname_txt
@@ -197,14 +198,13 @@
             this.lecFname_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lecFname_txt.Location = new System.Drawing.Point(37, 41);
             this.lecFname_txt.Name = "lecFname_txt";
-            this.lecFname_txt.Size = new System.Drawing.Size(523, 24);
+            this.lecFname_txt.Size = new System.Drawing.Size(519, 24);
             this.lecFname_txt.TabIndex = 8;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.department_btn);
-            this.panel1.Controls.Add(this.addCourse_btn);
+            this.panel1.Controls.Add(this.btnSMS);
             this.panel1.Controls.Add(this.adminLogout_btn);
             this.panel1.Controls.Add(this.addUnit_btn);
             this.panel1.Controls.Add(this.addLec_btn);
@@ -217,25 +217,17 @@
             this.panel1.Size = new System.Drawing.Size(261, 441);
             this.panel1.TabIndex = 9;
             // 
-            // department_btn
+            // btnSMS
             // 
-            this.department_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.department_btn.Location = new System.Drawing.Point(3, 318);
-            this.department_btn.Name = "department_btn";
-            this.department_btn.Size = new System.Drawing.Size(242, 42);
-            this.department_btn.TabIndex = 10;
-            this.department_btn.Text = "DEPARTMENT";
-            this.department_btn.UseVisualStyleBackColor = false;
-            // 
-            // addCourse_btn
-            // 
-            this.addCourse_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.addCourse_btn.Location = new System.Drawing.Point(3, 270);
-            this.addCourse_btn.Name = "addCourse_btn";
-            this.addCourse_btn.Size = new System.Drawing.Size(242, 45);
-            this.addCourse_btn.TabIndex = 9;
-            this.addCourse_btn.Text = "ADD COURSE";
-            this.addCourse_btn.UseVisualStyleBackColor = false;
+            this.btnSMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSMS.ForeColor = System.Drawing.Color.Black;
+            this.btnSMS.Location = new System.Drawing.Point(3, 299);
+            this.btnSMS.Name = "btnSMS";
+            this.btnSMS.Size = new System.Drawing.Size(242, 55);
+            this.btnSMS.TabIndex = 12;
+            this.btnSMS.Text = "SEND SMS";
+            this.btnSMS.UseVisualStyleBackColor = false;
+            this.btnSMS.Click += new System.EventHandler(this.btnSMS_Click);
             // 
             // adminLogout_btn
             // 
@@ -251,17 +243,18 @@
             // addUnit_btn
             // 
             this.addUnit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.addUnit_btn.Location = new System.Drawing.Point(3, 225);
+            this.addUnit_btn.Location = new System.Drawing.Point(3, 238);
             this.addUnit_btn.Name = "addUnit_btn";
             this.addUnit_btn.Size = new System.Drawing.Size(242, 55);
             this.addUnit_btn.TabIndex = 6;
             this.addUnit_btn.Text = "ADD UNIT";
             this.addUnit_btn.UseVisualStyleBackColor = false;
+            this.addUnit_btn.Click += new System.EventHandler(this.addUnit_btn_Click);
             // 
             // addLec_btn
             // 
             this.addLec_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.addLec_btn.Location = new System.Drawing.Point(3, 180);
+            this.addLec_btn.Location = new System.Drawing.Point(3, 186);
             this.addLec_btn.Name = "addLec_btn";
             this.addLec_btn.Size = new System.Drawing.Size(242, 46);
             this.addLec_btn.TabIndex = 4;
@@ -302,6 +295,19 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.Color.Maroon;
+            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.ForeColor = System.Drawing.Color.White;
+            this.btn_back.Location = new System.Drawing.Point(97, 355);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(141, 42);
+            this.btn_back.TabIndex = 20;
+            this.btn_back.Text = "BACK";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // Add_Lecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,8 +346,6 @@
         private System.Windows.Forms.Label lecPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button department_btn;
-        private System.Windows.Forms.Button addCourse_btn;
         private System.Windows.Forms.Button adminLogout_btn;
         private System.Windows.Forms.Button addUnit_btn;
         private System.Windows.Forms.Button addLec_btn;
@@ -349,5 +353,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnSMS;
+        private System.Windows.Forms.Button btn_back;
     }
 }
