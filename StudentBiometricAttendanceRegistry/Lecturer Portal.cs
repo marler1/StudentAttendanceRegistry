@@ -309,7 +309,7 @@ namespace StudentBiometricAttendanceRegistry
             {
                 //DateTime tm = DateTime.Now;
                 //string tday = tm.ToString("yyyy-MM-dd");
-                string sql23 = "SELECT date, RegistrationNumber, fName, lName, unit, course, counter FROM attendance WHERE unit='"+unitAtt_cb+"'";
+                string sql23 = "SELECT date, RegistrationNumber, fName, lName, unit, course, counter FROM attendance";
                 string conn = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
 
 

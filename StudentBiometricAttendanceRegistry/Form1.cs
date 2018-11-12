@@ -119,7 +119,13 @@ namespace StudentBiometricAttendanceRegistry
 
         private void Exit_btn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult iExit;
+            iExit = MessageBox.Show("Please confirm if you want to leave", "Students Attendance Registry", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (iExit == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
         }
         private void frm_menu_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -39,7 +39,6 @@ namespace StudentBiometricAttendanceRegistry
             
             try
             {
-                
                 DateTime tm = DateTime.Now;
                 string tday = tm.ToString("yyyy-MM-dd");
                 string sql23 = "SELECT date,  RegistrationNumber, fName, lName, counter FROM attendance";

@@ -11,13 +11,16 @@ using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 
 namespace StudentBiometricAttendanceRegistry
-    
+
 {
     public partial class Add_Lecturer : Form
     {
+
+
         public Add_Lecturer()
         {
             InitializeComponent();
+
         }
 
         private void submitLecDetails_btb_Click(object sender, EventArgs e)
@@ -122,7 +125,7 @@ namespace StudentBiometricAttendanceRegistry
 
         private void lecEmail_txt_TextChanged(object sender, EventArgs e)
         {
-            
+
             string pattern = "^([a-zA-Z0-9]+)@([a-zA-Z0-9]+).([a-zA-Z]{2,5})$";
             if (Regex.IsMatch(lecEmail_txt.Text, pattern))
             {
@@ -136,9 +139,15 @@ namespace StudentBiometricAttendanceRegistry
 
         private void lecTel_txt_TextChanged(object sender, EventArgs e)
         {
-           /* string DisallowChar;
-            DisallowChar = ",<.>/:;{[']}@#$%^*_!`";
-            if char.IsLetter(e.KeyChar) = true */
+            /*Regex pattern = new Regex(@"\+[0-9]{3}\s+[0-9]{3}\s+[0-9]{5}\s+[0-9]{3}");
+            if (pattern.IsMatch(lecTel_txt.Text))
+            {
+                MessageBox.Show("OK");
+            }
+            else
+            {
+                MessageBox.Show("Invalid phone number");
+            }*/
         }
     }
 }
