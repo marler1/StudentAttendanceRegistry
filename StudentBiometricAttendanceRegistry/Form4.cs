@@ -41,7 +41,7 @@ namespace StudentBiometricAttendanceRegistry
             {
                 DateTime tm = DateTime.Now;
                 string tday = tm.ToString("yyyy-MM-dd");
-                string sql23 = "SELECT date,  RegistrationNumber, fName, lName, counter FROM attendance";
+                string sql23 = "SELECT date,  RegistrationNumber, fName, lName, counter FROM attendance WHERE course = '"+lblCourse.Text+"' and unit = '"+lblUnit.Text+"'";
                 string conn = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
 
 
@@ -83,6 +83,11 @@ namespace StudentBiometricAttendanceRegistry
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panelPrint_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -60,11 +60,11 @@ namespace StudentBiometricAttendanceRegistry
                     }
                 }
                 // empty text fields
-                unitCode_cb.Text = " ";
-                unitName_txt.Text = " ";
+                unitCode_cb.SelectedItem = -1;
+                unitName_txt.SelectedItem = -1;
                 lecturer_txt.Text = " ";
-                course_cb.Text = " ";
-                year_cb.Text = " ";
+                course_cb.SelectedItem = -1;
+                year_cb.SelectedItem = -1;
 
             }
             catch (Exception ex)

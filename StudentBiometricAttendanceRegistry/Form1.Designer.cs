@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.labelday = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +81,7 @@
             this.groupBox1.Controls.Add(this.AdminLog_btn);
             this.groupBox1.Controls.Add(this.password_txtbox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(201, 178);
+            this.groupBox1.Location = new System.Drawing.Point(262, 182);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(508, 328);
             this.groupBox1.TabIndex = 3;
@@ -124,7 +125,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Green;
             this.pictureBox1.Image = global::StudentBiometricAttendanceRegistry.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(359, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(427, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 100);
             this.pictureBox1.TabIndex = 4;
@@ -142,7 +143,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(268, 132);
+            this.label4.Location = new System.Drawing.Point(341, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(378, 20);
             this.label4.TabIndex = 6;
@@ -150,19 +151,28 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(706, 58);
+            this.label5.Location = new System.Drawing.Point(108, 251);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 24);
+            this.label5.Size = new System.Drawing.Size(148, 37);
             this.label5.TabIndex = 7;
+            // 
+            // labelday
+            // 
+            this.labelday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelday.Location = new System.Drawing.Point(100, 197);
+            this.labelday.Name = "labelday";
+            this.labelday.Size = new System.Drawing.Size(156, 38);
+            this.labelday.TabIndex = 8;
+            this.labelday.Click += new System.EventHandler(this.labelday_Click);
             // 
             // Home_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(913, 505);
+            this.ClientSize = new System.Drawing.Size(1009, 505);
+            this.Controls.Add(this.labelday);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -192,6 +202,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Exit_btn;
+        private System.Windows.Forms.Label labelday;
     }
 }
 

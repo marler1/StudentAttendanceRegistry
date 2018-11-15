@@ -244,8 +244,8 @@ namespace StudentBiometricAttendanceRegistry
                 labelFingerprint.Text = " ";
                 phoneNo_txt.Text = " ";
                 email_txt.Text = " ";
-                selectCourse_cmx .Items.Clear();
-                year_cbx .Items.Clear();
+                selectCourse_cmx .SelectedItem = -1;
+                year_cbx .SelectedItem = -1;
                 passportPicBox.Image = null;
                                             
             }

@@ -177,18 +177,21 @@ namespace StudentBiometricAttendanceRegistry
                                         {
                                             if (m_SecuBSP.IsMatched)
                                             {
-                                                StatusBar.Text = "Matched";
+                                                //StatusBar.Text = "Details matched Registraion Number";
+                                                MessageBox.Show("Details captured. You have taken your attendance for today. Thank you.");
                                                 regNo = auth["RegistrationNumber"].ToString();
                                                 fnm = auth["First_Name"].ToString();
                                                 lnm = auth["Last_Name"].ToString();
 
 
                                                 addAttendance(unitAtt_cb.Text, course_cb.Text, regNo, fnm, lnm);
+                                                lblMStatus.Text = "Attendance verified, next student!!";
+                                                break;
                                             }
 
                                             else
                                             {
-                                                StatusBar.Text = "Not Match FOund";
+                                                lblMStatus.Text = "Not Match FOund";
                                             }
 
 
@@ -228,6 +231,9 @@ namespace StudentBiometricAttendanceRegistry
 
             DateTime dtm = DateTime.Now;
             string dayt = dtm.ToString();
+            //DateTime dnm = new System.DateTime();
+            //string dei = dnm.Day.ToString();
+
 
             //string tyme = dtm.ToString("HH-MM-SS");
             //string readDay;
@@ -242,40 +248,70 @@ namespace StudentBiometricAttendanceRegistry
                 {
                     using (MySqlDataReader auth = com.ExecuteReader())
                     {
+ 
                         if (auth.HasRows)
+                            
                         {
                             while (auth.Read())
                             {
-                                string attend = auth["counter"].ToString();
-
-                                string dyme = auth["date"].ToString();
-                              
-                                //double.Parse(string.Format(dayt,"HH.mm"));
-                                /*if (dyme == (tyme)+3)
+                                string select_class_counter = "SELECT classcounter FROM units WHERE unit_name = '" + unitAtt_cb.Text + "'";
+                                using (MySqlConnection cn23 = new MySqlConnection(con))
                                 {
-                                    MessageBox.Show("Sorry you have already taken attendance for today. Thank you");
-                                }
-                                else {}*/
-                                //int atted = int.Parse(attend) + 1;
-                                int attd = int.Parse(attend);
-                                attd++;
-                                string quer = "UPDATE attendance SET counter =" + attd + " WHERE RegistrationNumber = '" + reg + "'";
-                                using (MySqlConnection cn = new MySqlConnection(con))
-                                {
-                                    cn.Open();
-                                    using (MySqlCommand cm = new MySqlCommand(quer, cn))
+                                    cn23.Open();
+                                    using (MySqlCommand cmd23 = new MySqlCommand(select_class_counter, cn23))
                                     {
-                                        cm.ExecuteNonQuery();
+                                        using (MySqlDataReader dr23 = cmd23.ExecuteReader())
+                                        {
+
+                                            if (dr23.HasRows)
+                                                
+                                            {
+                                                while (dr23.Read()) { 
+                                                    string attendnd = dr23["classcounter"].ToString();
+                                                int classcounter = int.Parse(attendnd);
+
+                                                string attend = auth["counter"].ToString();
+
+                                                string dyme = auth["date"].ToString();
+
+                                                //double.Parse(string.Format(dayt,"HH.mm"));
+                                                /*if (dyme == (tyme)+3)
+                                                {
+                                                    MessageBox.Show("Sorry you have already taken attendance for today. Thank you");
+                                                }
+                                                else {}*/
+                                                //int atted = int.Parse(attend) + 1;
+                                                int attd = int.Parse(attend);
+                                                attd++;
+                                                // calculate the class percentage here
+
+                                                int per = (attd / classcounter) * 100;
+
+                                                string quer = "UPDATE attendance SET counter =" + attd + ", percentage = '"+ per + "' WHERE RegistrationNumber = '" + reg + "'";
+                                                using (MySqlConnection cn = new MySqlConnection(con))
+                                                {
+                                                    cn.Open();
+                                                    using (MySqlCommand cm = new MySqlCommand(quer, cn))
+                                                    {
+                                                        cm.ExecuteNonQuery();
+                                                    }
+                                                }
+                                                loadList();
+                                            }
+                                            }
+                                        }
                                     }
                                 }
-                                loadList();
+
                             }
 
 
                         }
                         else
                         {
+
                             string sql = "INSERT INTO attendance(date,  RegistrationNumber, fName, lName, unit, course,counter)VALUES(@date, @reg, @firstName, @lastName,@unit,  @course, @counter)";
+
                             using (MySqlConnection cn = new MySqlConnection(con))
                             {
                                 cn.Open();
@@ -289,6 +325,7 @@ namespace StudentBiometricAttendanceRegistry
                                     cm.Parameters.AddWithValue("@unit", unit);
                                     cm.Parameters.AddWithValue("@course", course);
                                     cm.Parameters.AddWithValue("@counter", updateAtt);
+                                  
 
 
                                     cm.ExecuteNonQuery();
@@ -302,14 +339,14 @@ namespace StudentBiometricAttendanceRegistry
                 }
             }
         }
-        
+
         private void loadList()
         {
             try
             {
                 //DateTime tm = DateTime.Now;
                 //string tday = tm.ToString("yyyy-MM-dd");
-                string sql23 = "SELECT date, RegistrationNumber, fName, lName, unit, course, counter FROM attendance";
+                string sql23 = "SELECT date, RegistrationNumber, fName, lName, unit, course, counter FROM attendance WHERE course = '"+course_cb.Text+"' and unit = '"+unitAtt_cb.Text+"'";
                 string conn = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
 
 
@@ -337,10 +374,47 @@ namespace StudentBiometricAttendanceRegistry
             }
             else
             {
-                panelcapture.Visible = true;
-                loadList();
+                string previus_class_counter = @"SELECT classcounter FROM units WHERE unit_name = '" + unitAtt_cb.Text + "'";
+                using (MySqlConnection sqlcon = new MySqlConnection(con))
+                {
+                    sqlcon.Open();
+
+                    using (MySqlCommand cmd12 = new MySqlCommand(previus_class_counter, sqlcon))
+                    {
+                        using (MySqlDataReader auth12 = cmd12.ExecuteReader())
+                        {
+                            if (auth12.HasRows)
+                            {
+                                while (auth12.Read())
+                                {
+                                    string attend = auth12["classcounter"].ToString();
+                                    int incclass = int.Parse(attend);
+                                    incclass+=1;
+                                    string quer = "UPDATE units SET classcounter =" + incclass + " WHERE unit_name = '" + unitAtt_cb.Text + "'";
+                                    using (MySqlConnection cn = new MySqlConnection(con))
+                                    {
+                                        cn.Open();
+                                        using (MySqlCommand cm = new MySqlCommand(quer, cn))
+                                        {
+                                            cm.ExecuteNonQuery();
+                                        }
+                                    }
+                                  
+                                }
+
+
+                            }
+
+                            panelcapture.Visible = true;
+                            loadList();
+
+                        }
+                    }
+                }
             }
         }
+        //int curren_class_counter = prev_unit_counter++
+         //       "UPDATE units SET classcounter = c_c WHERE unitname = unitAtt_cb.Text";
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {
@@ -360,6 +434,16 @@ namespace StudentBiometricAttendanceRegistry
         {
             attReport_frm attR = new attReport_frm(course_cb.Text, unitAtt_cb.Text);
             attR.Show();
+        }
+
+        private void StatusBar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void unitAtt_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

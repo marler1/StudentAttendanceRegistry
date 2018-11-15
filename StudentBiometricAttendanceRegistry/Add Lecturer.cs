@@ -53,7 +53,8 @@ namespace StudentBiometricAttendanceRegistry
             {
                 try
                 {
-
+                    DateTime dnm = new System.DateTime();
+                    string dei = dnm.Day.ToString();
 
                     // check connection and connect to the database
                     String con = string.Empty;
@@ -140,6 +141,7 @@ namespace StudentBiometricAttendanceRegistry
                 errorProvider1.SetError(this.lecEmail_txt, "Please provide a valid email address");
             }
         }
+        // try the KeyPress textbox code here
 
         private void lecTel_txt_TextChanged(object sender, EventArgs e)
         {
@@ -153,12 +155,6 @@ namespace StudentBiometricAttendanceRegistry
                 MessageBox.Show("Invalid phone number");
             }*/
         }
-            public int per(int counter)
-            {
-                int tynge = 3 + 7;
-                return tynge;
-            }
-
         private void addUnit_btn_Click(object sender, EventArgs e)
         {
             unitName_cb addUnit = new unitName_cb();

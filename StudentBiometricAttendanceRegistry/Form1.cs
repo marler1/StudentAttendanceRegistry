@@ -23,6 +23,8 @@ namespace StudentBiometricAttendanceRegistry
             DateTime tm = DateTime.Now;
 
             label5.Text = tm.ToString("yyyy-MM-dd");
+            string dei = System.DateTime.Now.DayOfWeek.ToString();
+            labelday.Text = dei;
         }
 
         private void AdminLog_btn_Click(object sender, EventArgs e)
@@ -130,6 +132,11 @@ namespace StudentBiometricAttendanceRegistry
         private void frm_menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void labelday_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

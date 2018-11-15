@@ -44,9 +44,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 125);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 129);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(899, 263);
+            this.dataGridView1.Size = new System.Drawing.Size(912, 259);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -90,20 +90,21 @@
             this.panelPrint.Controls.Add(this.lblUnit);
             this.panelPrint.Controls.Add(this.label3);
             this.panelPrint.Controls.Add(this.lblCourse);
+            this.panelPrint.Controls.Add(this.dataGridView1);
             this.panelPrint.Controls.Add(this.label1);
             this.panelPrint.Controls.Add(this.dataToPrint_lbl);
-            this.panelPrint.Controls.Add(this.dataGridView1);
             this.panelPrint.Location = new System.Drawing.Point(13, 3);
             this.panelPrint.Name = "panelPrint";
             this.panelPrint.Size = new System.Drawing.Size(927, 391);
             this.panelPrint.TabIndex = 4;
+            this.panelPrint.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrint_Paint);
             // 
             // lblUnit
             // 
             this.lblUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnit.Location = new System.Drawing.Point(112, 85);
+            this.lblUnit.Location = new System.Drawing.Point(112, 92);
             this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(527, 25);
+            this.lblUnit.Size = new System.Drawing.Size(497, 25);
             this.lblUnit.TabIndex = 7;
             // 
             // label3

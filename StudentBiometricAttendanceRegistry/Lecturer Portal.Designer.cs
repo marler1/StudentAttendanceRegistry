@@ -37,6 +37,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMStatus = new System.Windows.Forms.Label();
             this.viewReport_btn = new System.Windows.Forms.Button();
             this.panelcapture = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -139,6 +140,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblMStatus);
             this.groupBox1.Controls.Add(this.viewReport_btn);
             this.groupBox1.Controls.Add(this.panelcapture);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -152,6 +154,13 @@
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Verifying with details from the database";
+            // 
+            // lblMStatus
+            // 
+            this.lblMStatus.Location = new System.Drawing.Point(324, 417);
+            this.lblMStatus.Name = "lblMStatus";
+            this.lblMStatus.Size = new System.Drawing.Size(581, 41);
+            this.lblMStatus.TabIndex = 44;
             // 
             // viewReport_btn
             // 
@@ -221,6 +230,7 @@
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(153, 60);
             this.StatusBar.TabIndex = 36;
+            this.StatusBar.Click += new System.EventHandler(this.StatusBar_Click);
             // 
             // captureFingerprint_btn
             // 
@@ -291,6 +301,7 @@
             this.unitAtt_cb.Name = "unitAtt_cb";
             this.unitAtt_cb.Size = new System.Drawing.Size(225, 26);
             this.unitAtt_cb.TabIndex = 39;
+            this.unitAtt_cb.SelectedIndexChanged += new System.EventHandler(this.unitAtt_cb_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -400,5 +411,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button viewReport_btn;
+        private System.Windows.Forms.Label lblMStatus;
     }
 }
