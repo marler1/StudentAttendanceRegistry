@@ -186,7 +186,7 @@ namespace StudentBiometricAttendanceRegistry
 
                                                 addAttendance(unitAtt_cb.Text, course_cb.Text, regNo, fnm, lnm);
                                                 lblMStatus.Text = "Attendance verified, next student!!";
-                                                lblMStatus.Text = "";
+                                               
                                                 break;
                                             }
 
@@ -194,7 +194,6 @@ namespace StudentBiometricAttendanceRegistry
                                             {
                                                 lblMStatus.Text = "Not Match FOund";
                                             }
-
 
 
                                         }
