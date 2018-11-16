@@ -25,6 +25,29 @@ namespace StudentBiometricAttendanceRegistry
 
         private void addUnit_btn_Click(object sender, EventArgs e)
         {
+            //if (unitCode_cb.Text != "" && unitName_txt.Text != "" && lecturer_txt.Text != "" && course_cb.Text != "" && year_cb.Text != "")
+            if (unitCode_cb.Text == "")
+            {
+                MessageBox.Show("Please select unit code");
+            }
+
+            else if (unitName_txt.Text == " ")
+            {
+                MessageBox.Show("Please select unit name");
+            }
+            else if (lecturer_txt.Text == " ")
+            {
+                MessageBox.Show("Please asign lecturer to teach the unit");
+            }
+            else if (course_cb.Text == "")
+            {
+                MessageBox.Show("Please select the course");
+            }
+            else if (year_cb.Text == "")
+            {
+                MessageBox.Show("Please select year of study");
+            }
+            else { 
             try
             {
 
@@ -38,8 +61,9 @@ namespace StudentBiometricAttendanceRegistry
                     sqlcon.Open();
                     using (MySqlCommand com = new MySqlCommand(sql, sqlcon))
                     {
-                        if (unitCode_cb.Text != "" || unitName_txt.Text != "" || lecturer_txt.Text != "" || course_cb.Text != "" || year_cb.Text != "")
-                        {
+                        //if (unitCode_cb.Text != "" && unitName_txt.Text != "" && lecturer_txt.Text != "" && course_cb.Text != "" && year_cb.Text != "")
+                        
+                       {
                             //get values from users
                             com.Parameters.AddWithValue("@UnitCode", unitCode_cb.Text);
                             com.Parameters.AddWithValue("@UnitName", unitName_txt.Text);
@@ -53,10 +77,7 @@ namespace StudentBiometricAttendanceRegistry
                             MessageBox.Show("Processing Complete.....");
 
                         }
-                        else
-                        {
-                            MessageBox.Show("All fields are required to be filled");
-                        }
+                       
                     }
                 }
                 // empty text fields
@@ -70,6 +91,7 @@ namespace StudentBiometricAttendanceRegistry
             catch (Exception ex)
             {
                 MessageBox.Show("Problem Adding to database" + ex);
+            }
             }
         }
 

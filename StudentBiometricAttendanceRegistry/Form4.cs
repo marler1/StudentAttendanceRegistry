@@ -41,7 +41,7 @@ namespace StudentBiometricAttendanceRegistry
             {
                 DateTime tm = DateTime.Now;
                 string tday = tm.ToString("yyyy-MM-dd");
-                string sql23 = "SELECT date,  RegistrationNumber, fName, lName, counter FROM attendance WHERE course = '"+lblCourse.Text+"' and unit = '"+lblUnit.Text+"'";
+                string sql23 = "SELECT date,  RegistrationNumber, fName, lName, counter, percentage FROM attendance WHERE course = '"+lblCourse.Text+"' and unit = '"+lblUnit.Text+"'";
                 string conn = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
 
 
@@ -88,6 +88,11 @@ namespace StudentBiometricAttendanceRegistry
         }
 
         private void panelPrint_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblCourse_Click(object sender, EventArgs e)
         {
 
         }

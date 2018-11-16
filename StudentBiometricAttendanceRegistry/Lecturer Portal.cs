@@ -186,6 +186,7 @@ namespace StudentBiometricAttendanceRegistry
 
                                                 addAttendance(unitAtt_cb.Text, course_cb.Text, regNo, fnm, lnm);
                                                 lblMStatus.Text = "Attendance verified, next student!!";
+                                                lblMStatus.Text = "";
                                                 break;
                                             }
 
@@ -223,8 +224,6 @@ namespace StudentBiometricAttendanceRegistry
         }
         private void addAttendance(string unit, string course, string reg, string first, string last)
         {
-
-
             //Fingers used caleb right thumb
             //Evans right index
             //Kerema left thumb
@@ -268,7 +267,7 @@ namespace StudentBiometricAttendanceRegistry
                                             {
                                                 while (dr23.Read()) { 
                                                     string attendnd = dr23["classcounter"].ToString();
-                                                int classcounter = int.Parse(attendnd);
+                                                double classcounter = double.Parse(attendnd);
 
                                                 string attend = auth["counter"].ToString();
 
@@ -281,13 +280,17 @@ namespace StudentBiometricAttendanceRegistry
                                                 }
                                                 else {}*/
                                                 //int atted = int.Parse(attend) + 1;
-                                                int attd = int.Parse(attend);
+
+
+                                                double attd = double.Parse(attend);
                                                 attd++;
+
+
                                                 // calculate the class percentage here
 
-                                                int per = (attd / classcounter) * 100;
+                                                var per = (Math.Round((attd / classcounter) * 100));
 
-                                                string quer = "UPDATE attendance SET counter =" + attd + ", percentage = '"+ per + "' WHERE RegistrationNumber = '" + reg + "'";
+                                                string quer = "UPDATE attendance SET counter =" + attd + ", percentage = "+ per + " WHERE RegistrationNumber = '" + reg + "'";
                                                 using (MySqlConnection cn = new MySqlConnection(con))
                                                 {
                                                     cn.Open();
@@ -346,7 +349,7 @@ namespace StudentBiometricAttendanceRegistry
             {
                 //DateTime tm = DateTime.Now;
                 //string tday = tm.ToString("yyyy-MM-dd");
-                string sql23 = "SELECT date, RegistrationNumber, fName, lName, unit, course, counter FROM attendance WHERE course = '"+course_cb.Text+"' and unit = '"+unitAtt_cb.Text+"'";
+                string sql23 = "SELECT date, RegistrationNumber, fName, lName, unit, course, counter, percentage FROM attendance WHERE course = '"+course_cb.Text+"' and unit = '"+unitAtt_cb.Text+"'";
                 string conn = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
 
 
@@ -413,8 +416,6 @@ namespace StudentBiometricAttendanceRegistry
                 }
             }
         }
-        //int curren_class_counter = prev_unit_counter++
-         //       "UPDATE units SET classcounter = c_c WHERE unitname = unitAtt_cb.Text";
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {

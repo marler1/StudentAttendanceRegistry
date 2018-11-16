@@ -124,6 +124,7 @@
             this.lblCourse.Name = "lblCourse";
             this.lblCourse.Size = new System.Drawing.Size(497, 25);
             this.lblCourse.TabIndex = 5;
+            this.lblCourse.Click += new System.EventHandler(this.lblCourse_Click);
             // 
             // label1
             // 
