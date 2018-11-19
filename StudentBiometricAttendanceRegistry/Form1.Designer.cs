@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelday = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -166,12 +167,20 @@
             this.labelday.TabIndex = 8;
             this.labelday.Click += new System.EventHandler(this.labelday_Click);
             // 
+            // lblTime
+            // 
+            this.lblTime.Location = new System.Drawing.Point(731, 36);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(76, 39);
+            this.lblTime.TabIndex = 7;
+            // 
             // Home_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1009, 505);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.labelday);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -203,6 +212,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Exit_btn;
         private System.Windows.Forms.Label labelday;
+        private System.Windows.Forms.Label lblTime;
     }
 }
 

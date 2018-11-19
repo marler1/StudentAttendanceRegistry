@@ -25,6 +25,7 @@ namespace StudentBiometricAttendanceRegistry
             label5.Text = tm.ToString("yyyy-MM-dd");
             string dei = System.DateTime.Now.DayOfWeek.ToString();
             labelday.Text = dei;
+            
         }
 
         private void AdminLog_btn_Click(object sender, EventArgs e)
