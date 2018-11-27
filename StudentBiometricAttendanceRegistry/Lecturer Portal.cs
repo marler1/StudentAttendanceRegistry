@@ -11,8 +11,6 @@ using MySql.Data.MySqlClient;
 using SecuGen.SecuBSPPro.Windows;
 using System.IO;
 
-
-
 namespace StudentBiometricAttendanceRegistry
 {
 
@@ -174,6 +172,7 @@ namespace StudentBiometricAttendanceRegistry
 
 
                                         if (err == BSPError.ERROR_NONE)
+
                                         {
                                             if (m_SecuBSP.IsMatched)
                                             {
@@ -185,18 +184,20 @@ namespace StudentBiometricAttendanceRegistry
 
 
                                                 addAttendance(unitAtt_cb.Text, course_cb.Text, regNo, fnm, lnm);
-                                                lblMStatus.Text = "Attendance verified, next student!!";
+                                                lblMStatus.Text = "Next student please!!";
                                                
                                                 break;
+
+                                                
                                             }
 
                                             else
                                             {
-                                                lblMStatus.Text = "Not Match FOund";
+                                                lblMStatus.Text = "No Match Found. please Try again";
                                             }
-
-
+                                  
                                         }
+                                         
                                         else
                                         {
                                             DisplaySecuBSPErrMsg("VerifyMatch", err);
@@ -229,117 +230,148 @@ namespace StudentBiometricAttendanceRegistry
 
             DateTime dtm = DateTime.Now;
             string dayt = dtm.ToString();
-            //DateTime dnm = new System.DateTime();
+            DateTime dnm = new System.DateTime();
             //string dei = dnm.Day.ToString();
 
 
-            //string tyme = dtm.ToString("HH-MM-SS");
+            string tyme = dtm.ToString("HH-MM-SS");
             //string readDay;
-
-            string select = @"SELECT * FROM attendance WHERE RegistrationNumber = '" + reg + "'";
-            //unit = '" + unit + "' and
-            using (MySqlConnection sqlcon = new MySqlConnection(con))
+            string dei = System.DateTime.Now.DayOfWeek.ToString();
+            string querday = @"SELECT * FROM timetable WHERE unit = '" + unit + "'";
+            using (MySqlConnection con11 = new MySqlConnection(con))
             {
-                sqlcon.Open();
-                string[] Item = new string[1];
-                using (MySqlCommand com = new MySqlCommand(select, sqlcon))
+                con11.Open();
+                using (MySqlCommand cmd11 = new MySqlCommand(querday, con11))
                 {
-                    using (MySqlDataReader auth = com.ExecuteReader())
+                    using (MySqlDataReader dr11 = cmd11.ExecuteReader())
                     {
- 
-                        if (auth.HasRows)
-                            
+                        if (dr11.HasRows)
                         {
-                            while (auth.Read())
+                            while (dr11.Read())
                             {
-                                string select_class_counter = "SELECT classcounter FROM units WHERE unit_name = '" + unitAtt_cb.Text + "'";
-                                using (MySqlConnection cn23 = new MySqlConnection(con))
+                                string dait =  dr11["day"].ToString();
+
+                                if (dei == dait)
                                 {
-                                    cn23.Open();
-                                    using (MySqlCommand cmd23 = new MySqlCommand(select_class_counter, cn23))
+                                    string select = @"SELECT * FROM attendance WHERE RegistrationNumber = '" + reg + "'";
+                                    //unit = '" + unit + "' and
+                                    using (MySqlConnection sqlcon = new MySqlConnection(con))
                                     {
-                                        using (MySqlDataReader dr23 = cmd23.ExecuteReader())
+                                        sqlcon.Open();
+                                        string[] Item = new string[1];
+                                        using (MySqlCommand com = new MySqlCommand(select, sqlcon))
                                         {
-
-                                            if (dr23.HasRows)
-                                                
+                                            using (MySqlDataReader auth = com.ExecuteReader())
                                             {
-                                                while (dr23.Read()) { 
-                                                    string attendnd = dr23["classcounter"].ToString();
-                                                double classcounter = double.Parse(attendnd);
 
-                                                string attend = auth["counter"].ToString();
+                                                if (auth.HasRows)
 
-                                                string dyme = auth["date"].ToString();
-
-                                                //double.Parse(string.Format(dayt,"HH.mm"));
-                                                /*if (dyme == (tyme)+3)
                                                 {
-                                                    MessageBox.Show("Sorry you have already taken attendance for today. Thank you");
-                                                }
-                                                else {}*/
-                                                //int atted = int.Parse(attend) + 1;
-
-
-                                                double attd = double.Parse(attend);
-                                                attd++;
-
-
-                                                // calculate the class percentage here
-
-                                                var per = (Math.Round((attd / classcounter) * 100));
-
-                                                string quer = "UPDATE attendance SET counter =" + attd + ", percentage = "+ per + " WHERE RegistrationNumber = '" + reg + "'";
-                                                using (MySqlConnection cn = new MySqlConnection(con))
-                                                {
-                                                    cn.Open();
-                                                    using (MySqlCommand cm = new MySqlCommand(quer, cn))
+                                                    while (auth.Read())
                                                     {
-                                                        cm.ExecuteNonQuery();
+                                                        string select_class_counter = "SELECT classcounter FROM units WHERE unit_name = '" + unitAtt_cb.Text + "'";
+                                                        using (MySqlConnection cn23 = new MySqlConnection(con))
+                                                        {
+                                                            cn23.Open();
+                                                            using (MySqlCommand cmd23 = new MySqlCommand(select_class_counter, cn23))
+                                                            {
+                                                                using (MySqlDataReader dr23 = cmd23.ExecuteReader())
+                                                                {
+
+                                                                    if (dr23.HasRows)
+
+                                                                    {
+                                                                        while (dr23.Read())
+                                                                        {
+                                                                            string attendnd = dr23["classcounter"].ToString();
+                                                                            double classcounter = double.Parse(attendnd);
+
+                                                                            string attend = auth["counter"].ToString();
+
+                                                                            string dyme = auth["date"].ToString();
+
+                                                                            //double.Parse(string.Format(dayt,"HH.mm"));
+                                                                            /*if (dyme == (tyme)+3)
+                                                                            {
+                                                                                MessageBox.Show("Sorry you have already taken attendance for today. Thank you");
+                                                                            }
+                                                                            else {}*/
+                                                                            //int atted = int.Parse(attend) + 1;
+
+
+                                                                            double attd = double.Parse(attend);
+                                                                            attd++;
+
+
+                                                                            // calculate the class percentage here
+
+                                                                            var per = (Math.Round((attd / classcounter) * 100));
+
+                                                                            string quer = "UPDATE attendance SET counter =" + attd + ", percentage = " + per + " WHERE RegistrationNumber = '" + reg + "'";
+                                                                            using (MySqlConnection cn = new MySqlConnection(con))
+                                                                            {
+                                                                                cn.Open();
+                                                                                using (MySqlCommand cm = new MySqlCommand(quer, cn))
+                                                                                {
+                                                                                    cm.ExecuteNonQuery();
+                                                                                }
+                                                                            }
+                                                                            loadList();
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                    }
+
+
+                                                }
+                                                else
+                                                {
+
+                                                    string sql = "INSERT INTO attendance(date,  RegistrationNumber, fName, lName, unit, course,counter)VALUES(@date, @reg, @firstName, @lastName,@unit,  @course, @counter)";
+
+                                                    using (MySqlConnection cn = new MySqlConnection(con))
+                                                    {
+                                                        cn.Open();
+                                                        string updateAtt = "1";
+                                                        using (MySqlCommand cm = new MySqlCommand(sql, cn))
+                                                        {
+                                                            cm.Parameters.AddWithValue("@date", dayt);
+                                                            cm.Parameters.AddWithValue("@reg", reg);
+                                                            cm.Parameters.AddWithValue("@firstName", first);
+                                                            cm.Parameters.AddWithValue("@lastName", last);
+                                                            cm.Parameters.AddWithValue("@unit", unit);
+                                                            cm.Parameters.AddWithValue("@course", course);
+                                                            cm.Parameters.AddWithValue("@counter", updateAtt);
+
+
+
+                                                            cm.ExecuteNonQuery();
+                                                            loadList();
+                                                        }
                                                     }
                                                 }
-                                                loadList();
-                                            }
+
+
                                             }
                                         }
                                     }
                                 }
-
-                            }
-
-
-                        }
-                        else
-                        {
-
-                            string sql = "INSERT INTO attendance(date,  RegistrationNumber, fName, lName, unit, course,counter)VALUES(@date, @reg, @firstName, @lastName,@unit,  @course, @counter)";
-
-                            using (MySqlConnection cn = new MySqlConnection(con))
-                            {
-                                cn.Open();
-                                string updateAtt = "1";
-                                using (MySqlCommand cm = new MySqlCommand(sql, cn))
+                                else
                                 {
-                                    cm.Parameters.AddWithValue("@date", dayt);
-                                    cm.Parameters.AddWithValue("@reg", reg);
-                                    cm.Parameters.AddWithValue("@firstName", first);
-                                    cm.Parameters.AddWithValue("@lastName", last);
-                                    cm.Parameters.AddWithValue("@unit", unit);
-                                    cm.Parameters.AddWithValue("@course", course);
-                                    cm.Parameters.AddWithValue("@counter", updateAtt);
-                                  
-
-
-                                    cm.ExecuteNonQuery();
-                                    loadList();
+                                    MessageBox.Show("unit is not taught today. Thank you");
                                 }
                             }
                         }
-
-
                     }
                 }
+
             }
+
+            
+                            
         }
 
         private void loadList()

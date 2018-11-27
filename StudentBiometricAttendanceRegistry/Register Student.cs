@@ -13,7 +13,6 @@ using System.IO;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 
-
 namespace StudentBiometricAttendanceRegistry
 {
     public partial class Register_Student : Form
@@ -68,9 +67,6 @@ namespace StudentBiometricAttendanceRegistry
 
             m_DeviceOpened = true;
         }
-
-   
- 
         private void enumerate_btn_Click(object sender, EventArgs e)
         {
             BSPError err;
@@ -168,10 +164,8 @@ namespace StudentBiometricAttendanceRegistry
             {
                 MessageBox.Show("Please select student year of study");
             }
-
             else
-            {  
-            
+            {    
             try
             {
                 // post browsed image to database
@@ -188,7 +182,7 @@ namespace StudentBiometricAttendanceRegistry
                 //String con = string.Empty;
                 con = "Server=127.0.0.1; SslMode=none; port=3306; Uid=root; Database=Studentdb; Password=";
                 //string sql = string.Empty;
-                sql = @"INSERT  INTO student_details (RegistrationNumber, First_Name,Last_Name,Student_Passport, Student_Fingerprint, phone_Number, email_Address, course, Year)VALUES (@RegistrationNumber,@FirstName,@LastName, @StudentPassport,@StudentFingerprint, @PhoneNumber, @Email, @Course,@Year)";
+                sql = @"INSERT  INTO student_details(RegistrationNumber, First_Name,Last_Name,Student_Passport, Student_Fingerprint, phone_Number, email_Address, course, Year) VALUES (@RegistrationNumber,@FirstName,@LastName, @StudentPassport,@StudentFingerprint, @PhoneNumber, @Email, @Course,@Year)";
                 using (MySqlConnection sqlcon = new MySqlConnection(con))
                 {
                     sqlcon.Open();
@@ -219,9 +213,7 @@ namespace StudentBiometricAttendanceRegistry
                                         sqlcon.Close();
                                     }
                                     else
-                                    {
-                                      
-                                        
+                                    { 
                                             com.ExecuteNonQuery();
                                         sqlcon2.Close();
                                     }
@@ -230,13 +222,8 @@ namespace StudentBiometricAttendanceRegistry
                             }
                                 //if successful
                                 MessageBox.Show("Processing Complete.....You are registered successfully!");
-
-                        
-
                         }
-                    
                     }
-
                 //clear text boxes
                 regNo_txt.Text = " ";
                 fname_txt.Text = " ";
@@ -246,8 +233,7 @@ namespace StudentBiometricAttendanceRegistry
                 email_txt.Text = " ";
                 selectCourse_cmx .SelectedItem = -1;
                 year_cbx .SelectedItem = -1;
-                passportPicBox.Image = null;
-                                            
+                passportPicBox.Image = null;                                   
             }
             catch (Exception ex)
             {
